@@ -31,8 +31,8 @@ public interface FlightRepository extends JpaRepository<Flight,Long> {
     public List<Flight> findByArrivalAndDeparture(String arrival, String departure);
 
 
-    @Query("Select Distinct f from Flight f where f.departure.id=?1")
-    public List<Flight> findAllByDeparture(Long departure);
+    @Query("Select Distinct f.arrival from Flight f where f.departure.id=?1")
+    public List<Airport> findAllByDeparture(Long departure);
 
 
 }

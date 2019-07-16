@@ -3,6 +3,7 @@ package com.project.tripadvisor.flightBooking.service.serviceImpl;
 import com.project.tripadvisor.flightBooking.dao.AirplaneRepository;
 import com.project.tripadvisor.flightBooking.dao.FlightBookRepository;
 import com.project.tripadvisor.flightBooking.dao.FlightRepository;
+import com.project.tripadvisor.flightBooking.model.Airport;
 import com.project.tripadvisor.flightBooking.model.Flight;
 import com.project.tripadvisor.flightBooking.model.FlightBook;
 import com.project.tripadvisor.flightBooking.service.FlightBookService;
@@ -49,7 +50,7 @@ public class FlightBookServiceImpl implements FlightBookService {
     }
 
     @Override
-    public List<Flight> departureFlight(Long departure) {
+    public List<Airport> departureFlight(Long departure) {
         return flightRepository.findAllByDeparture(departure);
     }
 

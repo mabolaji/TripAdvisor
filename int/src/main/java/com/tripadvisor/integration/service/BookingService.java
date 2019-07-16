@@ -31,6 +31,9 @@ public class BookingService implements IBookingService {
 
     @Override
     public List<Airport> getDestinations(Long originId) {
+        if(originId==null)
+            return  null;
+
         ResponseEntity<List<Airport>> response = restTemplate.exchange(Common.flight_destinations_url+originId, HttpMethod.GET, null,
                 new ParameterizedTypeReference<List<Airport>>() {
                 });

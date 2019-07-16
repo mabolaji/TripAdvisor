@@ -1,5 +1,6 @@
 package com.project.tripadvisor.flightBooking.service;
 
+import com.project.tripadvisor.flightBooking.model.Airport;
 import com.project.tripadvisor.flightBooking.model.Flight;
 import com.project.tripadvisor.flightBooking.model.FlightBook;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,6 @@ public interface FlightBookService {
 
     public FlightBook bookFlight(String email, Flight flight);
     public  List<Flight> flightesFilter(Long departure, Long arrival, LocalDate departureDate);
-    public List<Flight> departureFlight(Long departure);
+    public List<Airport> departureFlight(Long departure);
 
 }

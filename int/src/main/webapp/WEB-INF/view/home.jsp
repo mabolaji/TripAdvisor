@@ -51,6 +51,18 @@
             </td>
         </tr>
 
+        <tr>
+            <td>Departure Date</td>
+            <td>
+                <form:input type="date" path="from" class="date-picker" />
+            </td>
+        </tr>
+        <tr>
+            <td>Return Date</td>
+            <td>
+                <form:input type="date" path="to" class="date-picker" />
+            </td>
+        </tr>
     <%--<tr>
                 <td>Title:</td>
                 <td>

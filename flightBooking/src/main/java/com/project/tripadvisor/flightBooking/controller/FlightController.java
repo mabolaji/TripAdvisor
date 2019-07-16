@@ -74,7 +74,7 @@ public class FlightController {
 
     @GetMapping("/destination")
 public List<Airport> getAirportsDest(@RequestParam String departure){
-        return flightBookService.departureFlight(Long.parseLong(departure)).stream().map(f->f.getArrival()).collect(Collectors.toList());
+        return flightBookService.departureFlight(Long.parseLong(departure));//.stream().map(f->f.getArrival()).collect(Collectors.toList());
     }
 
 

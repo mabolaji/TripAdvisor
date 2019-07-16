@@ -36,7 +36,7 @@ public class FlightController {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate arrivalDate1 = LocalDate.parse(arrivalDate, formatter);
         LocalDate departureDate1 = LocalDate.parse(departureDate, formatter);
-        List<Flight> flights=  flightBookService.flightes(departure,arrival,departureDate1,arrivalDate1);
+        List<Flight> flights=  flightBookService.flightes(Long.parseLong(departure),Long.parseLong(arrival),departureDate1,arrivalDate1);
         return flights;
     }
     @GetMapping("/flightFilter")
@@ -44,7 +44,7 @@ public class FlightController {
     {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate departureDate1 = LocalDate.parse(departureDate, formatter);
-        List<Flight> flights=  flightBookService.flightesFilter(departure,arrival,departureDate1);
+        List<Flight> flights=  flightBookService.flightesFilter(Long.parseLong(departure),Long.parseLong(arrival),departureDate1);
         return flights;
     }
 
@@ -74,7 +74,7 @@ public class FlightController {
 
     @GetMapping("/destination")
 public List<Airport> getAirportsDest(@RequestParam String departure){
-        return flightBookService.departureFlight(departure).stream().map(f->f.getArrival()).collect(Collectors.toList());
+        return flightBookService.departureFlight(Long.parseLong(departure)).stream().map(f->f.getArrival()).collect(Collectors.toList());
     }
 
 

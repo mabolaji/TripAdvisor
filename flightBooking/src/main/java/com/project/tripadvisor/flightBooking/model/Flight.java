@@ -3,6 +3,7 @@ package com.project.tripadvisor.flightBooking.model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
+import org.hibernate.annotations.ManyToAny;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -13,14 +14,25 @@ import java.util.List;
 @Data
 public class Flight {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String flightNumber;
-    private String departure;
-    private String arrival;
+
+    @ManyToOne
+    @JsonBackReference
+    private Airport departure;
+    @ManyToOne
+    @JsonBackReference
+    private Airport arrival;
+
     private LocalDateTime departureDate;
+
+    @ManyToOne
+    @JsonBackReference
+    private Airlines airlines;
+
     private LocalDateTime arrivalDate;
-    @OneToMany(mappedBy = "flight",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "flight")
     @JsonManagedReference
     private List<FlightBook> flightBooks=new ArrayList();
 

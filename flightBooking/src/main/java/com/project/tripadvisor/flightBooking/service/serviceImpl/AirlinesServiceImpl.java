@@ -1,27 +1,26 @@
 package com.project.tripadvisor.flightBooking.service.serviceImpl;
 
 import com.project.tripadvisor.flightBooking.dao.AirlinesRepository;
-import com.project.tripadvisor.flightBooking.model.Airlines;
+import com.project.tripadvisor.flightBooking.model.Airport;
 import com.project.tripadvisor.flightBooking.service.AirlinesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
-@Transactional
+
 public class AirlinesServiceImpl implements AirlinesService {
     @Autowired
     private AirlinesRepository airlinesRepository;
     @Override
-    public Airlines add(Airlines airlines)
+    public Airport add(Airport airlines)
     {
         return airlinesRepository.save(airlines);
     }
 
     @Override
-    public List<Airlines> getAirlines() {
+    public List<Airport> getAirlines() {
         return airlinesRepository.findAll();
     }
     @Override

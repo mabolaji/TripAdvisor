@@ -4,24 +4,34 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Data
-public class Airlines {
+public class Airport {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Long id;
 
     private String name;
 
-    @OneToMany(mappedBy = "airlines")
-    @JsonManagedReference
-    private List<Flight> flightList;
+    private String country;
 
-    @OneToMany(mappedBy = "airline")
+    private String city;
+
+    private String airportCode;
+
+    @OneToMany(mappedBy = "departure")
     @JsonManagedReference
-    private List<Airplanes> airplanes;
+    private List<Flight> origin=new ArrayList();
+
+    @OneToMany(mappedBy = "arrival",fetch = FetchType.EAGER)
+    @JsonManagedReference
+    private List<Flight> destinition=new ArrayList();
+
+
+
 
 
 }

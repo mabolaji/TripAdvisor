@@ -2,12 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65b50b10-e6c0-4542-b161-de95f42dd473" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/service/BookingService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/service/IBooking.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/model/Booking.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/test.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/model/Airport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/model/Airport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/service/BookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/service/BookingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/service/IBooking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/service/IBookingService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/fonts/flaticon/font/Flaticon.eot" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/fonts/flaticon/font/Flaticon.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/fonts/flaticon/font/Flaticon.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/fonts/flaticon/font/Flaticon.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/fonts/flaticon/font/Flaticon.woff" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/fonts/flaticon/font/Flaticon.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/fonts/flaticon/license/license.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/fonts/flaticon/license/license.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/fonts/icomoon/icomoon.eot" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/fonts/icomoon/icomoon.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/fonts/icomoon/icomoon.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/fonts/icomoon/icomoon.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/fonts/icomoon/icomoon.woff" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/fonts/icomoon/icomoon.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/fonts/ionicons/fonts/ionicons.eot" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/fonts/ionicons/fonts/ionicons.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/fonts/ionicons/fonts/ionicons.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/fonts/ionicons/fonts/ionicons.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/fonts/ionicons/fonts/ionicons.woff" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/fonts/ionicons/fonts/ionicons.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/fonts/ionicons/fonts/ionicons.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/fonts/ionicons/fonts/ionicons.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/fonts/open-iconic/open-iconic.eot" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/fonts/open-iconic/open-iconic.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/fonts/open-iconic/open-iconic.otf" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/fonts/open-iconic/open-iconic.otf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/fonts/open-iconic/open-iconic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/fonts/open-iconic/open-iconic.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/fonts/open-iconic/open-iconic.woff" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/fonts/open-iconic/open-iconic.woff" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -23,68 +40,41 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/controller/HomeController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#273#274#0" expanded="true" />
-                <element signature="e#308#309#0" expanded="true" />
-                <element signature="e#332#333#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/IntegrationApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#264#265#0" expanded="true" />
-                <element signature="e#337#338#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/test.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/bookList.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/home.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+            <state relative-caret-position="111">
+              <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/controller/TripAdvisorController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/model/Booking.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="54" column="2" selection-start-line="54" selection-start-column="2" selection-end-line="54" selection-end-column="2" />
+            <state relative-caret-position="119">
+              <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/bookDetail.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="11" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="18" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/controller/HomeController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="121">
+              <caret line="26" column="40" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="40" />
               <folding>
-                <element signature="e#0#1943#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#1713#1714#0" expanded="true" />
+                <element signature="e#1742#1743#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -93,8 +83,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/service/BookingService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+            <state relative-caret-position="340">
+              <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -103,31 +93,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/service/IBooking.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/service/IBookingService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="29" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="29" />
+            <state relative-caret-position="136">
+              <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/model/Airlines.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/model/Airport.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -138,8 +110,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -172,11 +144,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/controller/TripAdvisorController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/model/Airport.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/home.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/controller/HomeController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/test.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/service/IBooking.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/model/Airport.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/service/IBookingService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/controller/HomeController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/model/Booking.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/home.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/service/BookingService.java" />
       </list>
     </option>
@@ -190,8 +164,9 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
-    <option name="width" value="980" />
-    <option name="height" value="1040" />
+    <option name="y" value="-10" />
+    <option name="width" value="1620" />
+    <option name="height" value="1263" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -235,6 +210,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="integration" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="integration" type="b2602c69:ProjectViewProjectNode" />
+              <item name="int" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="integration" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="integration" type="b2602c69:ProjectViewProjectNode" />
@@ -311,6 +295,9 @@
       <recent name="E:\MUM\EA\Project\TripAdvisor\int\src\main\webapp\WEB-INF" />
       <recent name="E:\MUM\EA\Project\TripAdvisor\int\src\main\resources" />
       <recent name="E:\MUM\EA\Project\TripAdvisor\int\src\main\resources\templates" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.tripadvisor.integration.service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.tripadvisor.integration.controller" />
@@ -404,12 +391,12 @@
       <workItem from="1563256644275" duration="494000" />
       <workItem from="1563258129075" duration="10581000" />
       <workItem from="1563295214673" duration="5036000" />
-      <workItem from="1563294836830" duration="6043000" />
+      <workItem from="1563294836830" duration="16607000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22227000" />
+    <option name="totallyTimeSpent" value="32791000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
@@ -426,7 +413,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.46927375" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.39106146" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -550,9 +537,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/bookDetail.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/model/Flight.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -577,13 +561,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/model/Airport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/IntegrationApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -599,7 +576,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/test.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -607,26 +584,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/home.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/controller/HomeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#273#274#0" expanded="true" />
-            <element signature="e#308#309#0" expanded="true" />
-            <element signature="e#332#333#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -640,20 +597,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/service/IBooking.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/model/Airport.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="29" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="29" />
+        <state relative-caret-position="187">
+          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+          <folding>
+            <element signature="e#186#187#0" expanded="true" />
+            <element signature="e#215#216#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/9.0.19/tomcat-embed-core-9.0.19.jar!/org/apache/tomcat/util/threads/TaskThread.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/bookDetail.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="11" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="18" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/service/IBookingService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/controller/HomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="26" column="40" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1713#1714#0" expanded="true" />
+            <element signature="e#1742#1743#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/model/Booking.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tripadvisor/integration/service/BookingService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+        <state relative-caret-position="340">
+          <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

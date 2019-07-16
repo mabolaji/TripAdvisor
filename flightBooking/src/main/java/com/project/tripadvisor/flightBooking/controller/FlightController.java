@@ -20,8 +20,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/flight")
-public class BookFlightController {
+@RequestMapping("/api")
+public class FlightController {
     @Autowired
     private FlightBookServiceImpl flightBookService;
 
@@ -30,9 +30,8 @@ public class BookFlightController {
     @Autowired
     private AirportServiceImpl airportService;
 
-
-    @GetMapping("/all")
-    public List<Flight> flightes(@RequestParam String departure, @RequestParam String arrival, @RequestParam  String departureDate, @RequestParam  String arrivalDate)
+    @GetMapping("/flights")
+    public List<Flight> flights(@RequestParam String departure, @RequestParam String arrival, @RequestParam  String departureDate, @RequestParam  String arrivalDate)
     {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate arrivalDate1 = LocalDate.parse(arrivalDate, formatter);
@@ -67,7 +66,7 @@ public class BookFlightController {
         return flightBookService.bookFlight(email,flight);
     }
 
-    @GetMapping(value = "/origin")
+    @GetMapping(value = "/origins")
     public List<Airport> getAirports()
     {
         return  airportService.getOrigin();

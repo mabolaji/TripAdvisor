@@ -1,40 +1,41 @@
 package com.tripadvisor.integration.service;
 
 import com.tripadvisor.integration.model.Airport;
+import com.tripadvisor.integration.util.Common;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class BookingService implements IBookingService {
+
+    @Autowired
+    private RestTemplate restTemplate;
+
     @Override
     public List<Airport> getOrigins() {
-        List<Airport> airports = new ArrayList<>();
-        for (Long i = 0l; i < 5; i++) {
-            Airport airport = new Airport();
-            airport.setId(i);
-            airport.setName("airport " + i);
-            airports.add(airport);
-        }
 
-        return airports;
+        ResponseEntity<List<Airport>> response = restTemplate.exchange(Common.flight_origins_url, HttpMethod.GET, null,
+                new ParameterizedTypeReference<List<Airport>>() {
+                });
+
+        return  response.getBody();
+
     }
 
     @Override
     public List<Airport> getDestinations(Long originId) {
-        List<Airport> airports = new ArrayList<>();
+        ResponseEntity<List<Airport>> response = restTemplate.exchange(Common.flight_destinations_url+originId, HttpMethod.GET, null,
+                new ParameterizedTypeReference<List<Airport>>() {
+                });
 
-        if (originId != null) {
-
-            for (Long i = originId; i <= 5; i++) {
-                Airport airport = new Airport();
-                airport.setId(i);
-                airport.setName("destination " + i);
-                airports.add(airport);
-            }
-        }
-        return airports;
+        return  response.getBody();
     }
 
 }

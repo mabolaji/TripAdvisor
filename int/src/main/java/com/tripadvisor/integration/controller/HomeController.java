@@ -34,8 +34,6 @@ public class HomeController {
         else{
             System.out.println("booking exists");
         }
-
-
         return "home";
     }
 

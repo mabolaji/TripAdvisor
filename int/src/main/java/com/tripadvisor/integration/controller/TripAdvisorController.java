@@ -22,8 +22,6 @@ import org.springframework.web.reactive.function.client.WebClient;
 import java.util.List;
 
 @Controller
-@RequestMapping("/tripadvisor")
-//@Component
 public class TripAdvisorController {
 
     @Autowired

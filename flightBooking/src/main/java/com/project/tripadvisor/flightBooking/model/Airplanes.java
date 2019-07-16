@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +19,10 @@ public class Airplanes {
 
     private String regestrationNo;
 
+    @Email
+    @Column(nullable = false)
+    private String email;
+
     private int seat;
 
     @ManyToOne
@@ -27,3 +33,4 @@ public class Airplanes {
     @JsonManagedReference
     private List<Flight> flightList=new ArrayList();
 }
+

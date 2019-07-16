@@ -5,11 +5,12 @@ import com.project.tripadvisor.flightBooking.model.Airlines;
 import com.project.tripadvisor.flightBooking.service.AirlinesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
-
+@Transactional
 public class AirlinesServiceImpl implements AirlinesService {
     @Autowired
     private AirlinesRepository airlinesRepository;

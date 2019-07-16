@@ -16,26 +16,26 @@ public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable=false)
+    @Column(nullable = false)
     private String carName;
-    @Column(name="carBrand",nullable=false)
+    @Column(name = "carBrand", nullable = false)
     private String brand;
-    @Column(nullable=false)
+    @Column(nullable = false)
     private boolean status;
     private String imageurl;
-    @Column(nullable=false)
+    @Column(nullable = false)
     private int seatingCapacity;
     @Positive
     private double price;
-    @Column(nullable=false)
+    @Column(nullable = false)
     private String carTransmissiontype;
-    @OneToMany(mappedBy = "car",fetch=FetchType.EAGER)
+    @OneToMany(mappedBy = "car", fetch = FetchType.EAGER)
     @JsonManagedReference
     private List<CarBookingRecord> carbookinglist;
     @ManyToOne
     @JsonBackReference
-    @JoinColumn(name="companyId",nullable = false)
-private RentalCompany rentalComp;
+    @JoinColumn(name = "companyId", nullable = false)
+    private RentalCompany rentalComp;
 
     public Car(String carName, String brand, boolean status, String imageurl, int seatingCapacity, @Positive double price, String carTransmissiontype, List<CarBookingRecord> carbookinglist, RentalCompany rentalComp) {
         this.carName = carName;

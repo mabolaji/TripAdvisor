@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.cs544.restaurant.manager</groupId>
-    <artifactId>usermanager</artifactId>
+    <artifactId>restaurantmanager</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>restaurant</name>
     <description>Travel advisor restaurant manager</description>

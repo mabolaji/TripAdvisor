@@ -18,9 +18,7 @@ public class Flight {
     private String flightNumber;
     private String departure;
     private String arrival;
-
     private LocalDateTime departureDate;
-
     private LocalDateTime arrivalDate;
     @OneToMany(mappedBy = "flight",fetch = FetchType.EAGER)
     @JsonManagedReference

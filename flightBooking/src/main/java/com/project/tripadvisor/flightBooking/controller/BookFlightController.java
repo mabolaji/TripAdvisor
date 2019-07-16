@@ -19,7 +19,7 @@ import java.util.List;
 @RequestMapping("/flight")
 public class BookFlightController {
     @Autowired
-    private FlightBookServiceImpl flightBookService;
+    private FlightBookService flightBookService;
 
     @GetMapping("/all")
     public List<Flight> flightes(@RequestParam String departure, @RequestParam String arrival, @RequestParam  String departureDate, @RequestParam  String arrivalDate)
@@ -31,11 +31,11 @@ public class BookFlightController {
         return flights;
     }
 
-    @GetMapping("/test")
+   /* @GetMapping("/test")
     public  List<Flight> test(@RequestParam String arrival,@RequestParam String departure)
     {
         return flightBookService.test(arrival,departure);
-    }
+    }*/
     @PostMapping("/book")
     public FlightBook bookFlight(@RequestParam String email, @RequestBody Flight flight)
     {

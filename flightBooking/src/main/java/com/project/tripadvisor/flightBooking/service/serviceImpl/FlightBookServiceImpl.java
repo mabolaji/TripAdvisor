@@ -11,11 +11,11 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
+
 @Service
 @Transactional
-public class FlightBookServiceImpl implements FlightBookService {
+public abstract class FlightBookServiceImpl implements FlightBookService {
 
     @Autowired
     private FlightRepository flightRepository;
@@ -24,27 +24,35 @@ public class FlightBookServiceImpl implements FlightBookService {
     private FlightBookRepository flightBookRepository;
     @Autowired
     private AirplaneRepository airplaneRepository;
+
     @Override
     public List<Flight> flightes(String departure, String arrival, LocalDate departureDate, LocalDate arrivalDate) {
-        return flightRepository.findAllByDepartureAndArrivalAndDepartureDateAndArrivalDate(departure,arrival,departureDate,arrivalDate);
+        return flightRepository.findAllByDepartureAndArrivalAndDepartureDateAndArrivalDate(departure, arrival, departureDate, arrivalDate);
     }
 
     @Override
-    public FlightBook bookFlight(String email, Flight flight)
-    {
-        FlightBook flightBook=new FlightBook();
+    public FlightBook bookFlight(String email, Flight flight) {
+        FlightBook flightBook = new FlightBook();
         flightBook.setEmail(email);
         flightBook.setFlight(flight);
-        List<FlightBook> flightBooks=flightBookRepository.findAllByFlight(flight);
-        System.out.println("testt "+ flightBooks.size()+ "  "+flightRepository.findById(flight.getId()).get().getAirplane().getSeat());
-        if(flightBooks.size()<flightRepository.findById(flight.getId()).get().getAirplane().getSeat()) {
+
+        List<FlightBook> flightBooks = flightBookRepository.findAllByFlight(flight);
+
+        System.out.println("testt " + flightBooks.size() + "  " + flightRepository.findById(flight.getId()).get().getAirplane().getSeat());
+        if (flightBooks.size() < flightRepository.findById(flight.getId()).get().getAirplane().getSeat()) {
             return flightBookRepository.save(flightBook);
         }
-        return  null;
+        return null;
     }
 
-    public  List<Flight> test(String arrival,String departure)
-    {
-        return flightRepository.findByArrivalAndDeparture(arrival,departure);
+    @Override
+    public FlightBook bookFlight(String email, Long flightId){
+        Flight flight = flightRepository.getOne(flightId);
+
+        return  bookFlight(email, flight);
+    }
+
+    public List<Flight> test(String arrival, String departure) {
+        return flightRepository.findByArrivalAndDeparture(arrival, departure);
     }
 }

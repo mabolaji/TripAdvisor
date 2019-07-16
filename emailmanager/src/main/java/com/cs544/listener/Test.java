@@ -19,17 +19,17 @@ public class Test {
     private static final String EXCHANGE = "travel_advisory";
     private static final String ROUTING_KEY = "email_queue";
 
-    @Scheduled(fixedRate = 1000)
+    @Scheduled(fixedRate = 10000)
     public void Test() {
         LOGGER.info("Sending sample email");
-        rabbitTemplate.convertAndSend(EXCHANGE, "customer.deliveries", getSampleEmail());
+        rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY, getSampleEmail());
     }
 
     private Email getSampleEmail() {
         Email email = new Email();
         email.setBody("sample email body : " + Calendar.getInstance().toString());
         email.setTitle("email title"+ Math.random());
-        email.setEmail("mabolaji@mum.com");
+        email.setEmail("mabolaji@mum.edu");
         return email;
     }
 }

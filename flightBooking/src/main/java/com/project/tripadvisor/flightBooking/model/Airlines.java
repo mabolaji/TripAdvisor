@@ -12,7 +12,7 @@ import java.util.List;
 public class Airlines {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private  Long id;
+    private Long id;
 
     private String name;
 
@@ -20,7 +20,7 @@ public class Airlines {
 
     private String city;
 
-    @OneToMany(mappedBy = "airline",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "airline", fetch = FetchType.EAGER)
     @JsonManagedReference
-    private List<Airplanes> airplane=new ArrayList();
+    private List<Airplanes> airplane = new ArrayList();
 }

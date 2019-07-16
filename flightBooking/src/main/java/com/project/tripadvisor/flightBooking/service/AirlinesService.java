@@ -1,12 +1,12 @@
 package com.project.tripadvisor.flightBooking.service;
 
-import com.project.tripadvisor.flightBooking.model.Airlines;
+import com.project.tripadvisor.flightBooking.model.Airport;
 
 import java.util.List;
 
 public interface AirlinesService {
-     Airlines add(Airlines airlines);
-     List<Airlines> getAirlines();
+    public Airport add(Airport airlines);
+    public List<Airport> getAirlines();
 
-     void delete(Long id);
+    public void delete(Long id);
 }

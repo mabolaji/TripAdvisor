@@ -74,9 +74,9 @@ public class HomeController {
     @Valid @ModelAttribute("booking") Booking booking, BindingResult result, Model model)
     //@ModelAttribute("booking") Booking booking, Model model)
     {
-        if (model.containsAttribute("booking") ) {
+        if (model.containsAttribute("booking") && result.hasErrors()==false ) {
             System.out.println("booking : " + booking);
-
+            model.addAttribute("flights", bookingService.getFlights(booking));
         } else {
             return "redirect:/home";
         }

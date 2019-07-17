@@ -1,13 +1,12 @@
 package com.tripadvisor.integration.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
-//import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+
+//import javax.persistence.*;
 
 
 @Data
@@ -25,7 +24,7 @@ public class Flight {
 
     private LocalDateTime arrivalDate;
 
-    private List<FlightBook> flightBooks=new ArrayList();
+    private List<FlightBook> flightBooks = new ArrayList();
 
-       private Airplanes airplane;
+    private Airplanes airplane;
 }

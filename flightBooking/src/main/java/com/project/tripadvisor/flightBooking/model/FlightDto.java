@@ -4,6 +4,7 @@ import lombok.Data;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Date;
 
 @Data
@@ -12,8 +13,11 @@ public class FlightDto {
     private String flightNumber;
     private String arrival_city;
     private String departure_city;
-    private LocalDateTime departure_date;
-    private LocalDateTime arrival_date;
+    private LocalDate departure_date;
+    private LocalDate arrival_date;
+
+    private LocalTime departureTime;
+    private LocalTime arrivalTime;
     private String airLine;
     private Long Id;
 }

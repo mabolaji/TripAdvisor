@@ -65,6 +65,7 @@ public class TripAdvisorController {
     @PostMapping(value = "/book")
     public String book(@RequestParam String email,@RequestParam String id)
     {
+        System.out.println(id);
         FlightBook flights = (restTemplate.exchange(flight_service_url + "/api/book?email="+email+"&id="+id, HttpMethod.POST, null, new ParameterizedTypeReference<FlightBook>(){})).getBody();
         return "test";
     }

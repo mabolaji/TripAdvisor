@@ -9,6 +9,7 @@ import com.project.tripadvisor.flightBooking.service.serviceImpl.FlightBookServi
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.awt.*;
 import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -69,10 +70,12 @@ public class FlightController {
                     data.setArrival_city(f.getArrival().getCity());
                     data.setId(f.getId());
                     data.setArrival_city(f.getArrival().getCity());
-                    data.setArrival_date(f.getArrivalDate());
-                    data.setDeparture_date(f.getDepartureDate());
+                    data.setArrival_date(f.getArrivalDate().toLocalDate());
+                    data.setDeparture_date(f.getDepartureDate().toLocalDate());
                     data.setReg_num(f.getAirplane().getRegestrationNo());
                     data.setDeparture_city(f.getDeparture().getCity());
+                    data.setDepartureTime(f.getDepartureDate().toLocalTime());
+                    data.setArrivalTime(f.getArrivalDate().toLocalTime());
                     list.add(data);
                 });
 
@@ -146,8 +149,12 @@ public class FlightController {
         return flightBookService.test(arrival,departure);
     }
     @PostMapping("/book")
-    public FlightBook bookFlight(@RequestParam String email, @RequestBody Flight flight)
+    public FlightBook bookFlight(@RequestParam String email, @RequestParam String id)
     {
+       System.out.println("testtttttttt "+email +" "+id);
+
+        Flight flight=flightRepository.findById(Long.parseLong(id)).get();
+        System.out.println(flight.getDepartureDate()+"testtttttttttttt");
         return flightBookService.bookFlight(email,flight);
     }
 

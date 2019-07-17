@@ -1,22 +1,16 @@
 package com.project.tripadvisor.flightBooking.controller;
 
 import com.project.tripadvisor.flightBooking.dao.AirlinesRepository;
+import com.project.tripadvisor.flightBooking.dao.AirportRepository;
 import com.project.tripadvisor.flightBooking.dao.FlightRepository;
-import com.project.tripadvisor.flightBooking.model.Airlines;
-import com.project.tripadvisor.flightBooking.model.Airport;
-import com.project.tripadvisor.flightBooking.model.Flight;
-import com.project.tripadvisor.flightBooking.model.FlightBook;
-import com.project.tripadvisor.flightBooking.service.FlightBookService;
+import com.project.tripadvisor.flightBooking.model.*;
 import com.project.tripadvisor.flightBooking.service.serviceImpl.AirportServiceImpl;
 import com.project.tripadvisor.flightBooking.service.serviceImpl.FlightBookServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
-import javax.validation.ValidationException;
+import java.text.ParseException;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +30,9 @@ public class FlightController {
     @Autowired
     private AirportServiceImpl airportService;
 
+    @Autowired
+    private AirportRepository airportRepository;
+
     @GetMapping("/getAirlines")
     public List<Airlines> getAirlines()
     {
@@ -53,12 +50,41 @@ public class FlightController {
         return flights;
     }
     @GetMapping("/flightFilter")
-    public List<Flight> flightFilter(@RequestParam String departure, @RequestParam String arrival, @RequestParam  String departureDate)
-    {
+    public List<FlightDto> flightFilter(@RequestParam String departure, @RequestParam String arrival, @RequestParam  String departureDate) throws ParseException {
+
+        String newDate =  departureDate.replaceAll("(\\d+)/(\\d+)/(\\d+)", "$3-$1-$2");
+        System.out.println("after formating "+newDate);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDate departureDate1 = LocalDate.parse(departureDate, formatter);
+        LocalDate departureDate1 = LocalDate.parse(newDate, formatter);
+
         List<Flight> flights=  flightBookService.flightesFilter(Long.parseLong(departure),Long.parseLong(arrival),departureDate1);
-        return flights;
+
+        List<FlightDto> list =  new ArrayList<>();
+        flights
+                .stream()
+                .forEach(f -> {
+                    FlightDto data =  new FlightDto();
+                    data.setFlightNumber(f.getFlightNumber());
+                    data.setAirLine(f.getAirplane().getAirline().getName());
+                    data.setArrival_city(f.getArrival().getCity());
+                    data.setId(f.getId());
+                    data.setArrival_city(f.getArrival().getCity());
+                    data.setArrival_date(f.getArrivalDate());
+                    data.setDeparture_date(f.getDepartureDate());
+                    data.setReg_num(f.getAirplane().getRegestrationNo());
+                    data.setDeparture_city(f.getDeparture().getCity());
+                    list.add(data);
+                });
+
+        return  list;
+//        System.out.println(flights.get(0)+" after change");
+      //  return flights;
+    }
+
+    @GetMapping("/city")
+    public Airport city(@RequestParam String departure)
+    {
+        return airportRepository.findById(Long.parseLong(departure)).get();
     }
 
     @GetMapping("/flightFilterOptional")
@@ -91,7 +117,28 @@ public class FlightController {
     {
         return  flightRepository.findAll();
     }
+    /*@GetMapping("/test2")
+    public List<FlightDto> flights2()
+    {
+        List<FlightDto> list =  new ArrayList<>();
+          flightRepository.searchFlights()
+                .stream()
+                .forEach(f -> {
+                    FlightDto data =  new FlightDto();
+                    data.setFlightNumber(f.getFlightNumber());
+                    data.setAirLine(f.getAirplane().getAirline().getName());
+                    data.setArrival_city(f.getArrival().getCity());
+                    data.setId(f.getId());
+                    data.setArrival_city(f.getArrival().getCity());
+                    data.setArrival_date(f.getArrivalDate());
+                    data.setDeparture_date(f.getDepartureDate());
+                    data.setReg_num(f.getAirplane().getRegestrationNo());
+                    data.setDeparture_city(f.getDeparture().getCity());
+                    list.add(data);
+                });
 
+          return  list;
+    }*/
 
     @GetMapping("/test111")
     public  List<Flight> test(@RequestParam String arrival,@RequestParam String departure)

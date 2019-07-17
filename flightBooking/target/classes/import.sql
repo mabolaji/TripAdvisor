@@ -24,13 +24,13 @@
 #
 #
 # //Airport
-# INSERT INTO `flightbook`.`airport` (`airport_code`, `city`, `country`, `name`)  VALUES (null,'airport001', 'Addis Abeba', 'Ethiopian', 'Addis Airport');
-# INSERT INTO `flightbook`.`airport` (`airport_code`, `city`, `country`, `name`)  VALUES (null,'airport002', 'kigali', 'Rwanda', 'Kanombe');
-# INSERT INTO `flightbook`.`airport` (`airport_code`, `city`, `country`, `name`)  VALUES (null,'airport003', 'Lagos', 'Nigeria', 'Lagos Airport');
-# INSERT INTO `flightbook`.`airport` (`airport_code`, `city`, `country`, `name`)  VALUES (null,'airport004', 'DC', 'USA', 'DC Airport');
-# INSERT INTO `flightbook`.`airport` (`airport_code`, `city`, `country`, `name`)  VALUES (null,'airport005', 'Chicago', 'USA', 'Chicago Airport');
-# INSERT INTO `flightbook`.`airport` (`airport_code`, `city`, `country`, `name`)  VALUES (null,'airport006', 'Toronto', 'Canda', 'Toronto Airport');
-# INSERT INTO `flightbook`.`airport` (`airport_code`, `city`, `country`, `name`) VALUES (null,'airport007', 'Bruxelles', 'Belgium', 'Bruxelles Airport');
+# INSERT INTO `flightbook`.`airport` (`airport_code`, `arrival_city`, `country`, `name`)  VALUES (null,'airport001', 'Addis Abeba', 'Ethiopian', 'Addis Airport');
+# INSERT INTO `flightbook`.`airport` (`airport_code`, `arrival_city`, `country`, `name`)  VALUES (null,'airport002', 'kigali', 'Rwanda', 'Kanombe');
+# INSERT INTO `flightbook`.`airport` (`airport_code`, `arrival_city`, `country`, `name`)  VALUES (null,'airport003', 'Lagos', 'Nigeria', 'Lagos Airport');
+# INSERT INTO `flightbook`.`airport` (`airport_code`, `arrival_city`, `country`, `name`)  VALUES (null,'airport004', 'DC', 'USA', 'DC Airport');
+# INSERT INTO `flightbook`.`airport` (`airport_code`, `arrival_city`, `country`, `name`)  VALUES (null,'airport005', 'Chicago', 'USA', 'Chicago Airport');
+# INSERT INTO `flightbook`.`airport` (`airport_code`, `arrival_city`, `country`, `name`)  VALUES (null,'airport006', 'Toronto', 'Canda', 'Toronto Airport');
+# INSERT INTO `flightbook`.`airport` (`airport_code`, `arrival_city`, `country`, `name`) VALUES (null,'airport007', 'Bruxelles', 'Belgium', 'Bruxelles Airport');
 #
 
 

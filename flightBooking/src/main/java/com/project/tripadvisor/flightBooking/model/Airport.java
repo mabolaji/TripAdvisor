@@ -1,11 +1,11 @@
 package com.project.tripadvisor.flightBooking.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -22,16 +22,16 @@ public class Airport {
 
     private String airportCode;
 
-    /*
+
     @OneToMany(mappedBy = "departure")
     @JsonManagedReference
     private List<Flight> origin=new ArrayList();
 
-    @OneToMany(mappedBy = "arrival",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "arrival")
     @JsonManagedReference
-    private List<Flight> destinition=new ArrayList();
+    private List<Flight> origin1=new ArrayList();
 
-*/
+
 
 
 }

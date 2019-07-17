@@ -1,6 +1,7 @@
 package com.project.tripadvisor.flightBooking.service.serviceImpl;
 
 import com.project.tripadvisor.flightBooking.dao.AirlinesRepository;
+import com.project.tripadvisor.flightBooking.dao.AirportRepository;
 import com.project.tripadvisor.flightBooking.model.Airport;
 import com.project.tripadvisor.flightBooking.service.AirlinesService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,7 @@ import java.util.List;
 
 public class AirlinesServiceImpl implements AirlinesService {
     @Autowired
-    private AirlinesRepository airlinesRepository;
+    private AirportRepository airlinesRepository;
     @Override
     public Airport add(Airport airlines)
     {

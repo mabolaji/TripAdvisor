@@ -1,6 +1,8 @@
 package com.project.tripadvisor.flightBooking.controller;
 
+import com.project.tripadvisor.flightBooking.dao.AirlinesRepository;
 import com.project.tripadvisor.flightBooking.dao.FlightRepository;
+import com.project.tripadvisor.flightBooking.model.Airlines;
 import com.project.tripadvisor.flightBooking.model.Airport;
 import com.project.tripadvisor.flightBooking.model.Flight;
 import com.project.tripadvisor.flightBooking.model.FlightBook;
@@ -28,8 +30,18 @@ public class FlightController {
 
     @Autowired
     private FlightRepository flightRepository;
+
+    @Autowired
+    private AirlinesRepository airlines;
     @Autowired
     private AirportServiceImpl airportService;
+
+    @GetMapping("/getAirlines")
+    public List<Airlines> getAirlines()
+    {
+        return airlines.findAll();
+    }
+
 
     @GetMapping("/flights")
     public List<Flight> flights(@RequestParam String departure, @RequestParam String arrival, @RequestParam  String departureDate, @RequestParam  String arrivalDate)

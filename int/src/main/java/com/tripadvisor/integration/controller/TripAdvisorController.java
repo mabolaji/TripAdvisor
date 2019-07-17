@@ -10,17 +10,15 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.servlet.ModelAndView;
 //import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.List;
 
 @Controller
-@RequestMapping("/trip")
+//@RequestMapping("/trip")
 public class TripAdvisorController {
 
     @Autowired
@@ -54,24 +52,39 @@ public class TripAdvisorController {
 //        return companies.getBody();    }
 //@Autowired
 //private WebClient.Builder webClientBuilder;
-    private String flight_service_url = "http://flight-service/";
+    private String flight_service_url = "http://flight1-service/";
     private String hotel_service_url = "http://hotel-service/hotel-res/allhotels";
     private String car_service_url = "http://car-service/carRental/company";
 
 
-    @GetMapping(value = "/home")
-    public String home()
-    {
-        return "index";
-    }
+//    @GetMapping(value = "/home")
+//    public String home()
+//    {
+//        return "index";
+//    }
 
 
     @GetMapping(value ="/getairline")
     public List<Airlines> getAllAirlines(){
-        ResponseEntity<List<Airlines>> airlines = restTemplate.exchange(flight_service_url, HttpMethod.GET, null, new ParameterizedTypeReference<List<Airlines>>(){});
+        ResponseEntity<List<Airlines>> airlines = restTemplate.exchange(flight_service_url+"/api/getAirlines", HttpMethod.GET, null, new ParameterizedTypeReference<List<Airlines>>(){});
 //model.addAttribute("airline",airlines.getBody());
         return airlines.getBody();
     }
+
+    @GetMapping(value ="/getAirports")
+    public ModelAndView getAllAirport(){
+        ModelAndView mdv=new ModelAndView();
+        ResponseEntity<List<Airport>> airlines = restTemplate.exchange(flight_service_url+"/api/origins", HttpMethod.GET, null, new ParameterizedTypeReference<List<Airport>>(){});
+        mdv.setViewName("index");
+        mdv.addObject("airlines",airlines.getBody());
+        return mdv;
+    }
+
+    @GetMapping("/home")
+    public String home(){
+        return "index";
+    }
+
     @GetMapping(value ="/getcarCompany")
     public List<RentalCompany> getAllCarCompanies(){
         ResponseEntity<List<RentalCompany>> companies = restTemplate.exchange(car_service_url, HttpMethod.GET, null, new ParameterizedTypeReference<List<RentalCompany>>(){});

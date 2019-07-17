@@ -3,7 +3,7 @@ package com.tripadvisor.integration.model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
-import javax.persistence.*;
+//import javax.persistence.*;
 
 
 @Data

@@ -9,6 +9,7 @@ import com.project.tripadvisor.flightBooking.service.serviceImpl.FlightBookServi
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.awt.*;
 import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -68,10 +69,12 @@ public class FlightController {
                     data.setArrival_city(f.getArrival().getCity());
                     data.setId(f.getId());
                     data.setArrival_city(f.getArrival().getCity());
-                    data.setArrival_date(f.getArrivalDate());
-                    data.setDeparture_date(f.getDepartureDate());
+                    data.setArrival_date(f.getArrivalDate().toLocalDate());
+                    data.setDeparture_date(f.getDepartureDate().toLocalDate());
                     data.setReg_num(f.getAirplane().getRegestrationNo());
                     data.setDeparture_city(f.getDeparture().getCity());
+                    data.setDepartureTime(f.getDepartureDate().toLocalTime());
+                    data.setArrivalTime(f.getArrivalDate().toLocalTime());
                     list.add(data);
                 });
 

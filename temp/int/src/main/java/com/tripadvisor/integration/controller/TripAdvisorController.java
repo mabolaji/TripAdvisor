@@ -57,16 +57,18 @@ public class TripAdvisorController {
     @PostMapping(value = "/searchFlight")
     public String searchFlight(@RequestParam String departure, @RequestParam String arrival, @RequestParam  String departureDate,Model model)
     {
-
         List<FlightDto> flights = (restTemplate.exchange(flight_service_url + "api/flightFilter?departure="+departure+"&arrival="+arrival+"&departureDate="+departureDate, HttpMethod.GET, null, new ParameterizedTypeReference<List<FlightDto>>(){})).getBody();
-        System.out.println("countttttttttttttt "+flights.get(0));
-
         model.addAttribute("flightlist",flights);
-////        model.addAttribute("flightlist1",flights.getBody());
-//        model.addAttribute("airportd"+airportD.getBody().getCity());
         return "flights";
     }
 
+    @PostMapping(value = "/book")
+    public String book(@RequestParam String email,@RequestParam String id)
+    {
+        System.out.println(id);
+        FlightBook flights = (restTemplate.exchange(flight_service_url + "/api/book?email="+email+"&id="+id, HttpMethod.POST, null, new ParameterizedTypeReference<FlightBook>(){})).getBody();
+        return "test";
+    }
     @GetMapping(value = "/destination/{destination}")
     public List<Airport> destination(@PathVariable String destination)
     {

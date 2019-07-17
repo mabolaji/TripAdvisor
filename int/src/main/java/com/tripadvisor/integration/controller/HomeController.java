@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -21,7 +22,6 @@ public class HomeController {
     private IBookingService bookingService;
     @GetMapping
     public String index(@ModelAttribute("booking") @Valid Booking booking, Model model) {
-
 
         model.addAttribute("origins",  bookingService.getOrigins());
         model.addAttribute("destinations",  bookingService.getDestinations(booking.getOriginId()));
@@ -44,6 +44,17 @@ public class HomeController {
         //System.out.println(booking);
         System.out.println(flash.getFlashAttributes().keySet());
         return "redirect:/home";
+    }
+
+    @PostMapping("/search")
+    public String search(Booking booking, RedirectAttributes flash) {
+
+        flash.addFlashAttribute("booking", booking);
+        System.out.println(booking);
+        System.out.println(flash.getFlashAttributes().keySet());
+
+
+        return "redirect:/home?search=true";
     }
 
     @GetMapping("/temp")

@@ -54,13 +54,13 @@
         <tr>
             <td>Departure Date</td>
             <td>
-                <form:input type="date" path="from" class="date-picker" />
+                <form:input type="date" pattern="yyyy-MM-dd" path="from" class="date-picker" />
             </td>
         </tr>
         <tr>
             <td>Return Date</td>
             <td>
-                <form:input type="date" path="to" class="date-picker" />
+                <form:input type="date" path="to" pattern="yyyy-MM-dd" class="date-picker" />
             </td>
         </tr>
     <%--<tr>
@@ -101,8 +101,13 @@
             </tr>  --%>
     </table>
 
-    <input type="submit" value="${msg}"/>
 </form:form>
+
+    <form action="search" modelAttribute="booking" name="searchfm" id="searchfm" method="post">
+        <button type="submit">Search</button>
+        <sec:csrfInput />
+    </form>
+
 
 </body>
 </html>

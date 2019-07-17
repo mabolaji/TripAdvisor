@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 
 <head>
@@ -9,14 +10,9 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <script type="text/javascript">
-
         $(document).ready(function () {
             $('#originId').change(function () {
                 $( "#booking" ).submit();
-            })
-            
-            $('#search').click(function () {
-                $( "#booking" ).submit({url: '/search', type: 'post'}).submit();
             })
         });
     </script>
@@ -57,53 +53,54 @@
         <tr>
             <td>Departure Date</td>
             <td>
-                <form:input type="date" pattern="yyyy-MM-dd" path="from" class="date-picker" />
+                <form:input type="date" path="from" class="date-picker" />
             </td>
         </tr>
         <tr>
             <td>Return Date</td>
             <td>
-                <form:input type="date" path="to" pattern="yyyy-MM-dd" class="date-picker" />
+                <form:input type="date" path="to" class="date-picker" />
             </td>
         </tr>
-    <%--<tr>
-                <td>Title:</td>
-                <td>
-                    <form:input path="title" />
-                </td>
-                <td>
-                    <form:errors path="title" />
-                </td>
-            </tr>
-            <tr>
-                <td>ISBN:</td>
-                <td>
-                    <form:input path="ISBN" />
-                </td>
-                <td>
-                    <form:errors path="ISBN" />
-                </td>
-            </tr>
-            <tr>
-                <td>Author:</td>
-                <td>
-                    <form:input path="author" />
-                </td>
-                <td>
-                    <form:errors path="author" />
-                </td>
-            </tr>
-            <tr>
-                <td>Price:</td>
-                <td>
-                    <form:input path="price" />
-                </td>
-                <td>
-                    <form:errors path="price" />
-                </td>
-            </tr>  --%>
+            <%--<tr>
+                        <td>Title:</td>
+                        <td>
+                            <form:input path="title" />
+                        </td>
+                        <td>
+                            <form:errors path="title" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ISBN:</td>
+                        <td>
+                            <form:input path="ISBN" />
+                        </td>
+                        <td>
+                            <form:errors path="ISBN" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Author:</td>
+                        <td>
+                            <form:input path="author" />
+                        </td>
+                        <td>
+                            <form:errors path="author" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Price:</td>
+                        <td>
+                            <form:input path="price" />
+                        </td>
+                        <td>
+                            <form:errors path="price" />
+                        </td>
+                    </tr>  --%>
     </table>
-    <button id="search" name="search" type="button">Search</button>
+
+    <input id="Search" name="search" type="submit" value="Search"/>
 </form:form>
 
 </body>

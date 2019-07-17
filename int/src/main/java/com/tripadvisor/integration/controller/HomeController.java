@@ -87,9 +87,5 @@ public class HomeController {
         return "redirect:/home?search="+result.getErrorCount();
     }
 
-    @GetMapping("/temp")
-    public String testpage(){
-        return "test";
-    }
 
 }

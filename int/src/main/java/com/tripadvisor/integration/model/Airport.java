@@ -2,28 +2,31 @@ package com.tripadvisor.integration.model;
 
 import lombok.Data;
 
+
+
+@Data
 public class Airport {
+
     private  Long id;
-    private  String name;
 
-    @Override
-    public String toString() {
-        return  name ;
-    }
+    private String name;
 
-    public Long getId() {
-        return id;
-    }
+    private String country;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    private String city;
 
-    public String getName() {
-        return name;
-    }
+    private String airportCode;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+//    @OneToMany(mappedBy = "departure")
+//    @JsonManagedReference
+//    private List<Flight> origin=new ArrayList();
+//
+//    @OneToMany(mappedBy = "arrival",fetch = FetchType.EAGER)
+//    @JsonManagedReference
+//    private List<Flight> destinition=new ArrayList();
+
+
+
+
+
 }

@@ -1,10 +1,10 @@
 package com.tripadvisor.integration.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
-import java.util.ArrayList;
+//import javax.persistence.*;
 import java.util.List;
-
 
 @Data
 public class Airlines {
@@ -13,9 +13,10 @@ public class Airlines {
 
     private String name;
 
-    private String country;
 
-    private String city;
+    private List<Flight> flightList;
 
-    private List<Airplanes> airplane=new ArrayList();
+    private List<Airplanes> airplanes;
+
+
 }

@@ -24,6 +24,7 @@ public class Car {
     private boolean status;
     @Column(length=25,unique = true)
     private String plateNumber;
+    @Lob
     private String imageurl;
     @Column(nullable = false)
     private int seatingCapacity;

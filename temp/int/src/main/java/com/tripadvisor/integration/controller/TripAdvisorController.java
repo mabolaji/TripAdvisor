@@ -1,4 +1,4 @@
-package com.tripadvisor.integration.controller;
+/*package com.tripadvisor.integration.controller;
 
 import com.tripadvisor.integration.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -78,4 +78,4 @@ public class TripAdvisorController {
         return  airports;
     }
 
-}
+}*/

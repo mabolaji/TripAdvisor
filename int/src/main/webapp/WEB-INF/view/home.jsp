@@ -17,7 +17,7 @@
             })
             
             $('#search').click(function () {
-                $( "#booking" ).submit({url: '/search', type: 'post'});
+                $( "#booking" ).submit({url: '/search', type: 'post'}).submit();
             })
         });
     </script>

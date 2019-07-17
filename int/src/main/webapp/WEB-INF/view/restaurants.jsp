@@ -13,21 +13,18 @@
 
 <html>
 <head>
-    <title>Flights</title>
+    <title>Restaurants</title>
 </head>
 <body>
-<h1>Flights</h1>
+<h1>restaurants</h1>
 <table>
-    <c:forEach var="flight" items="${flights}">
+    <c:forEach var="item" items="${restaurants}">
         <tr>
-            <td>${flight.id}</td>
-            <td>${flight.flightNumber}</td>
-            <td>${flight.departureDate}</td>
-            <td>${flight.arrivalDate}</td>
-            <td>${flight.airplane}</td>
+            <td>${item.name}</td>
+            <td> <img src="${item.img_url}"></td>
             <td>
-                <form action="book/${flight.id}" method="post">
-                    <button type="submit">Book</button>
+                <form action="book/=${item.id}" method="post">
+                    <button type="submit">Select</button>
                     <sec:csrfInput />
                 </form>
             </td>

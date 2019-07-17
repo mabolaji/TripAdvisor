@@ -3,6 +3,7 @@ package com.tripadvisor.integration.service;
 import com.tripadvisor.integration.model.Airport;
 import com.tripadvisor.integration.model.Booking;
 import com.tripadvisor.integration.model.Flight;
+import com.tripadvisor.integration.model.Restaurant;
 import com.tripadvisor.integration.util.Common;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
@@ -48,7 +49,16 @@ public class BookingService  implements  IBookingService{
         ResponseEntity<List<Flight>> response = restTemplate.exchange(Common.flight_search_url, HttpMethod.GET, null,
                 new ParameterizedTypeReference<List<Flight>>() {
                 });
-         System.out.println(response.getBody());
+
+        return response.getBody();
+    }
+
+    @Override
+    public List<Restaurant> getRestaurants(Long flightId) {
+
+        ResponseEntity<List<Restaurant>> response = restTemplate.exchange(Common.flight_restaurant_url, HttpMethod.GET, null,
+                new ParameterizedTypeReference<List<Restaurant>>() {
+                });
 
         return response.getBody();
     }

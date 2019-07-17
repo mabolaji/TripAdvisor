@@ -2,16 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ef189b7-f648-4c55-8499-f3e533742372" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/tripadvisor/flightBooking/FlightBookingApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/tripadvisor/flightBooking/FlightBookingApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/tripadvisor/flightBooking/controller/FlightController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/tripadvisor/flightBooking/controller/FlightController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../int/src/main/java/com/tripadvisor/integration/model/Restaurant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../int/src/main/webapp/WEB-INF/view/restaurants.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../int/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../int/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../int/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../int/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../int/src/main/java/com/tripadvisor/integration/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../int/src/main/java/com/tripadvisor/integration/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../int/src/main/java/com/tripadvisor/integration/model/Flight.java" beforeDir="false" afterPath="$PROJECT_DIR$/../int/src/main/java/com/tripadvisor/integration/model/Flight.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../int/src/main/java/com/tripadvisor/integration/service/BookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../int/src/main/java/com/tripadvisor/integration/service/BookingService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../int/src/main/java/com/tripadvisor/integration/service/IBookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../int/src/main/java/com/tripadvisor/integration/service/IBookingService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../int/src/main/java/com/tripadvisor/integration/util/Common.java" beforeDir="false" afterPath="$PROJECT_DIR$/../int/src/main/java/com/tripadvisor/integration/util/Common.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../int/src/main/webapp/WEB-INF/view/flights.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../int/src/main/webapp/WEB-INF/view/flights.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resturantmanager/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../resturantmanager/src/main/resources/application.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -250,12 +251,12 @@
       <option name="presentableId" value="Default" />
       <updated>1563271193294</updated>
       <workItem from="1563271197351" duration="12633000" />
-      <workItem from="1563315021078" duration="9117000" />
+      <workItem from="1563315021078" duration="9303000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21750000" />
+    <option name="totallyTimeSpent" value="21936000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1010" extended-state="6" />

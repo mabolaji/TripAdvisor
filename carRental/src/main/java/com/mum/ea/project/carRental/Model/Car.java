@@ -22,6 +22,8 @@ public class Car {
     private String brand;
     @Column(nullable = false)
     private boolean status;
+    @Column(length=25,unique = true)
+    private String plateNumber;
     private String imageurl;
     @Column(nullable = false)
     private int seatingCapacity;

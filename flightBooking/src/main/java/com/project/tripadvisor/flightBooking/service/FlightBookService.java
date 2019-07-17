@@ -14,6 +14,7 @@ public interface FlightBookService {
     public List<Flight> flightes(Long departure, Long arrival, LocalDate departureDate, LocalDate arrivalDate);
 
     public FlightBook bookFlight(String email, Flight flight);
+    FlightBook bookFlight(String email, Long flightId);
     public  List<Flight> flightesFilter(Long departure, Long arrival, LocalDate departureDate);
     public List<Airport> departureFlight(Long departure);
     public List<Flight> ActualFight();

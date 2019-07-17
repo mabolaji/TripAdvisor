@@ -62,5 +62,10 @@ public class FlightBookServiceImpl implements FlightBookService {
         return  flightRepository.listActualFight();
     }
 
+    @Override
+    public FlightBook bookFlight(String email, Long flightId){
+        Flight flight = flightRepository.getOne(flightId);
 
+        return  bookFlight(email, flight);
+    }
 }

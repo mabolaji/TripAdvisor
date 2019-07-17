@@ -1,9 +1,6 @@
 package com.tripadvisor.integration.controller;
 
-import com.tripadvisor.integration.model.Airlines;
-import com.tripadvisor.integration.model.Airport;
-import com.tripadvisor.integration.model.Flight;
-import com.tripadvisor.integration.model.RentalCompany;
+import com.tripadvisor.integration.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
@@ -24,50 +21,14 @@ public class TripAdvisorController {
     @Autowired
     private RestTemplate restTemplate;
 
-//    @Autowired
-//    private WebClient.Builder webClientBuilder;
-//    private String airline_service_url = "http://flight-service/airlines/getairline";
-//    private String hotel_service_url = "http://hotel-service/hotel-res/allhotels";
-//    private String car_service_url = "http://car-service/carRental/company";
-//
-//    @GetMapping(value = "/home")
-//    public String home() {
-//        return "index";
-//    }
-//
-//
-//    @GetMapping(value = "/getairline")
-//    public String getAllAirlines(Model model) {
-//        ResponseEntity<List<Airlines>> airlines = restTemplate.exchange(airline_service_url, HttpMethod.GET, null, new ParameterizedTypeReference<List<Airlines>>() {
-//        });
-//        model.addAttribute("airline", airlines.getBody());
-//        return "test1";
-//    }
-//
-//    @GetMapping(value = "/getcarCompany")
-//    public List<RentalCompany> getAllCarCompanies() {
-//        ResponseEntity<List<RentalCompany>> companies = restTemplate.exchange(car_service_url, HttpMethod.GET, null, new ParameterizedTypeReference<List<RentalCompany>>() {
-//        });
-//
-//        return companies.getBody();    }
-//@Autowired
-//private WebClient.Builder webClientBuilder;
     private String flight_service_url = "http://flight1-service/";
-    private String hotel_service_url = "http://hotel-service/hotel-res/allhotels";
+    private String hotel_service_url = "http://hotel-service/";
     private String car_service_url = "http://car-service/carRental/company";
-
-
-//    @GetMapping(value = "/home")
-//    public String home()
-//    {
-//        return "index";
-//    }
-
 
     @GetMapping(value ="/getairline")
     public List<Airlines> getAllAirlines(){
         ResponseEntity<List<Airlines>> airlines = restTemplate.exchange(flight_service_url+"/api/getAirlines", HttpMethod.GET, null, new ParameterizedTypeReference<List<Airlines>>(){});
-//model.addAttribute("airline",airlines.getBody());
+
         return airlines.getBody();
     }
 
@@ -96,16 +57,13 @@ public class TripAdvisorController {
     @PostMapping(value = "/searchFlight")
     public String searchFlight(@RequestParam String departure, @RequestParam String arrival, @RequestParam  String departureDate,Model model)
     {
-//        ModelAndView mdv=new ModelAndView();
 
-//        System.out.println("testttttttttttt" + departure +"testtt "+arrival +"dateeee "+departureDate);
-        List<Flight> flights = (restTemplate.exchange(flight_service_url + "api/flightFilter?departure="+departure+"&arrival="+arrival+"&departureDate="+departureDate, HttpMethod.GET, null, new ParameterizedTypeReference<List<Flight>>(){})).getBody();
-        ResponseEntity<Airport> airportD = (restTemplate.exchange(flight_service_url + "api/city?departure="+departure, HttpMethod.GET, null, new ParameterizedTypeReference<Airport>(){}));
+        List<FlightDto> flights = (restTemplate.exchange(flight_service_url + "api/flightFilter?departure="+departure+"&arrival="+arrival+"&departureDate="+departureDate, HttpMethod.GET, null, new ParameterizedTypeReference<List<FlightDto>>(){})).getBody();
         System.out.println("countttttttttttttt "+flights.get(0));
-//        mdv.setViewName("flights");
+
         model.addAttribute("flightlist",flights);
-//        model.addAttribute("flightlist1",flights.getBody());
-        model.addAttribute("airportd"+airportD.getBody().getCity());
+////        model.addAttribute("flightlist1",flights.getBody());
+//        model.addAttribute("airportd"+airportD.getBody().getCity());
         return "flights";
     }
 

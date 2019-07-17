@@ -18,6 +18,12 @@ public class RentalCompanyController {
         return compService.getallCompany();
     }
 
+    @GetMapping("/company/{destination}")
+    public List<RentalCompany> getAllRentalCompanyDestination() {
+        return compService.getallCompany();
+    }
+
+
     @GetMapping("/company/search")
     public List<RentalCompany> getCarByBrand(@RequestParam String location) {
         return compService.getCompByLocation(location);

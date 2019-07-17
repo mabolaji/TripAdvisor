@@ -1,4 +1,4 @@
-package com.tripadvisor.integration.controller;
+/*package com.tripadvisor.integration.controller;
 
 import com.tripadvisor.integration.model.Hotel;
 import com.tripadvisor.integration.service.HotelService;
@@ -24,4 +24,4 @@ public class HotelController {
     public String  flight(){
         return "fights";
     }
-}
+}*/

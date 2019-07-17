@@ -17,13 +17,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-//@SessionAttributes("booking")
 public class HomeController {
 
     @Autowired
     private IBookingService bookingService;
 
     @GetMapping
+    public String index(){
+        return  "index";
+    }
+
+    @GetMapping("old")
     public String index(@ModelAttribute("booking") Booking booking, Model model) {
 
         if (!model.containsAttribute("booking")) {

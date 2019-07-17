@@ -34,36 +34,35 @@ public class FlightController {
     private AirportRepository airportRepository;
 
     @GetMapping("/getAirlines")
-    public List<Airlines> getAirlines()
-    {
+    public List<Airlines> getAirlines() {
         return airlines.findAll();
     }
 
 
     @GetMapping("/flights")
-    public List<Flight> flights(@RequestParam String departure, @RequestParam String arrival, @RequestParam  String departureDate, @RequestParam  String arrivalDate)
-    {
+    public List<Flight> flights(@RequestParam String departure, @RequestParam String arrival, @RequestParam String departureDate, @RequestParam String arrivalDate) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate arrivalDate1 = LocalDate.parse(arrivalDate, formatter);
         LocalDate departureDate1 = LocalDate.parse(departureDate, formatter);
-        List<Flight> flights=  flightBookService.flightes(Long.parseLong(departure),Long.parseLong(arrival),departureDate1,arrivalDate1);
+        List<Flight> flights = flightBookService.flightes(Long.parseLong(departure), Long.parseLong(arrival), departureDate1, arrivalDate1);
         return flights;
     }
-    @GetMapping("/flightFilter")
-    public List<FlightDto> flightFilter(@RequestParam String departure, @RequestParam String arrival, @RequestParam  String departureDate) throws ParseException {
 
-        String newDate =  departureDate.replaceAll("(\\d+)/(\\d+)/(\\d+)", "$3-$1-$2");
-        System.out.println("after formating "+newDate);
+    @GetMapping("/flightFilter")
+    public List<FlightDto> flightFilter(@RequestParam String departure, @RequestParam String arrival, @RequestParam String departureDate) throws ParseException {
+
+        String newDate = departureDate.replaceAll("(\\d+)/(\\d+)/(\\d+)", "$3-$1-$2");
+        System.out.println("after formating " + newDate);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate departureDate1 = LocalDate.parse(newDate, formatter);
 
-        List<Flight> flights=  flightBookService.flightesFilter(Long.parseLong(departure),Long.parseLong(arrival),departureDate1);
+        List<Flight> flights = flightBookService.flightesFilter(Long.parseLong(departure), Long.parseLong(arrival), departureDate1);
 
-        List<FlightDto> list =  new ArrayList<>();
+        List<FlightDto> list = new ArrayList<>();
         flights
                 .stream()
                 .forEach(f -> {
-                    FlightDto data =  new FlightDto();
+                    FlightDto data = new FlightDto();
                     data.setFlightNumber(f.getFlightNumber());
                     data.setAirLine(f.getAirplane().getAirline().getName());
                     data.setArrival_city(f.getArrival().getCity());
@@ -76,35 +75,34 @@ public class FlightController {
                     list.add(data);
                 });
 
-        return  list;
+        return list;
 //        System.out.println(flights.get(0)+" after change");
-      //  return flights;
+        //  return flights;
     }
 
     @GetMapping("/city")
-    public Airport city(@RequestParam String departure)
-    {
+    public Airport city(@RequestParam String departure) {
         return airportRepository.findById(Long.parseLong(departure)).get();
     }
 
     @GetMapping("/flightFilterOptional")
-    public List<Flight> flightFilteroptional(@RequestParam String departure, @RequestParam String arrival, @RequestParam  String departureDate)
-    {
+    public List<Flight> flightFilteroptional(@RequestParam String departure, @RequestParam String arrival, @RequestParam String departureDate) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        List<Flight> flights=new ArrayList<>();
-        if(departure.isEmpty()&&arrival.isEmpty()&&departureDate.isEmpty()){
-             flights=flightBookService.ActualFight();
-        }else if(departure.isEmpty() && departureDate.isEmpty()){
-            flights=flightBookService.ActualFight().stream().filter(f->f.getArrival().getId().equals(Long.parseLong(arrival))).collect(Collectors.toList());
-        }else if(arrival.isEmpty() && departureDate.isEmpty() ){
-            flights=flightBookService.ActualFight().stream().filter(f->f.getDeparture().getId().equals(Long.parseLong(departure))).collect(Collectors.toList());;
-        }else if(arrival.isEmpty()&&departure.isEmpty()){
+        List<Flight> flights = new ArrayList<>();
+        if (departure.isEmpty() && arrival.isEmpty() && departureDate.isEmpty()) {
+            flights = flightBookService.ActualFight();
+        } else if (departure.isEmpty() && departureDate.isEmpty()) {
+            flights = flightBookService.ActualFight().stream().filter(f -> f.getArrival().getId().equals(Long.parseLong(arrival))).collect(Collectors.toList());
+        } else if (arrival.isEmpty() && departureDate.isEmpty()) {
+            flights = flightBookService.ActualFight().stream().filter(f -> f.getDeparture().getId().equals(Long.parseLong(departure))).collect(Collectors.toList());
+            ;
+        } else if (arrival.isEmpty() && departure.isEmpty()) {
             LocalDate departureDate1 = LocalDate.parse(departureDate, formatter);
-            flights=flightBookService.ActualFight().stream().filter(f->f.getDepartureDate().toLocalDate().isEqual(departureDate1)).collect(Collectors.toList());
-        }else {
+            flights = flightBookService.ActualFight().stream().filter(f -> f.getDepartureDate().toLocalDate().isEqual(departureDate1)).collect(Collectors.toList());
+        } else {
 
             LocalDate departureDate1 = LocalDate.parse(departureDate, formatter);
-            flights= flightBookService.flightesFilter(Long.parseLong(departure),Long.parseLong(arrival),departureDate1);
+            flights = flightBookService.flightesFilter(Long.parseLong(departure), Long.parseLong(arrival), departureDate1);
 
         }
 
@@ -113,9 +111,8 @@ public class FlightController {
 
 
     @GetMapping("/test")
-    public List<Flight> flights()
-    {
-        return  flightRepository.findAll();
+    public List<Flight> flights() {
+        return flightRepository.findAll();
     }
     /*@GetMapping("/test2")
     public List<FlightDto> flights2()
@@ -141,27 +138,24 @@ public class FlightController {
     }*/
 
     @GetMapping("/test111")
-    public  List<Flight> test(@RequestParam String arrival,@RequestParam String departure)
-    {
-        return flightBookService.test(arrival,departure);
+    public List<Flight> test(@RequestParam String arrival, @RequestParam String departure) {
+        return flightBookService.test(arrival, departure);
     }
+
     @PostMapping("/book")
-    public FlightBook bookFlight(@RequestParam String email, @RequestBody Flight flight)
-    {
-        return flightBookService.bookFlight(email,flight);
+    public FlightBook bookFlight(@RequestParam String email, @RequestBody Flight flight) {
+        return flightBookService.bookFlight(email, flight);
     }
 
     @GetMapping(value = "/origins")
-    public List<Airport> getAirports()
-    {
-        return  airportService.getOrigin();
+    public List<Airport> getAirports() {
+        return airportService.getOrigin();
     }
 
     @GetMapping("/destination")
-public List<Airport> getAirportsDest(@RequestParam String departure){
+    public List<Airport> getAirportsDest(@RequestParam String departure) {
         return flightBookService.departureFlight(Long.parseLong(departure));//.stream().map(f->f.getArrival()).collect(Collectors.toList());
     }
-
 
 
 }

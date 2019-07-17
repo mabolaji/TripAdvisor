@@ -6,16 +6,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="int" />
+        <module name="com.trip.advisory" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="int" target="1.8" />
+      <module name="com.trip.advisory" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="int" options="-parameters" />
+      <module name="com.trip.advisory" options="-parameters" />
     </option>
   </component>
 </project>

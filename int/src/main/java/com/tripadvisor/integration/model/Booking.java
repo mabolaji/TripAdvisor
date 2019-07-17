@@ -4,7 +4,6 @@ import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.Future;
-import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
@@ -16,11 +15,11 @@ public class Booking {
     private Long destinationId;
     @NotNull(message = "Kindly select valid departure date")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @Future(message ="Departure date must be a date in the future")
+    @Future(message = "Departure date must be a date in the future")
     private Date from;
     @NotNull(message = "Kindly select valid return date")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @Future(message ="Departure date must be a date in the future")
+    @Future(message = "Departure date must be a date in the future")
     private Date to;
 }
 

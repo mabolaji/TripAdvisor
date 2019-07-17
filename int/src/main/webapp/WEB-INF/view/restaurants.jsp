@@ -14,6 +14,7 @@
 <html>
 <head>
     <title>Restaurants</title>
+    <link href="/static/css/aos.css">
 </head>
 <body>
 <h1>restaurants</h1>

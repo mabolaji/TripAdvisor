@@ -16,32 +16,11 @@ import java.util.Collections;
 import java.util.List;
 
 @SpringBootApplication
-@EnableEurekaClient
 public class FlightBookingApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(FlightBookingApplication.class, args);
     }
-    //    @Bean
-//    public WebClient.Builder getWebClientBuilder()
-//    {
-//        return  WebClient.builder();
-//    }
-    @Bean
-    @LoadBalanced
-    public RestTemplate getRestTemplate() {
-//        return new RestTemplate();
 
-
-//        return new RestTemplate();
-        final RestTemplate restTemplate = new RestTemplate();
-
-        List<HttpMessageConverter<?>> messageConverters = new ArrayList<>();
-        MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
-        converter.setSupportedMediaTypes(Collections.singletonList(MediaType.ALL));
-        messageConverters.add(converter);
-        restTemplate.setMessageConverters(messageConverters);
-        return restTemplate;
-    }
 
 }

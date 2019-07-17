@@ -16,7 +16,7 @@ import java.util.Collections;
 import java.util.List;
 
 @SpringBootApplication
-//@EnableEurekaClient
+@EnableEurekaClient
 public class FlightBookingApplication {
 
     public static void main(String[] args) {
@@ -27,7 +27,7 @@ public class FlightBookingApplication {
 //    {
 //        return  WebClient.builder();
 //    }
- /*   @Bean
+    @Bean
     @LoadBalanced
     public RestTemplate getRestTemplate() {
 //        return new RestTemplate();
@@ -42,6 +42,6 @@ public class FlightBookingApplication {
         messageConverters.add(converter);
         restTemplate.setMessageConverters(messageConverters);
         return restTemplate;
-    }*/
+    }
 
 }

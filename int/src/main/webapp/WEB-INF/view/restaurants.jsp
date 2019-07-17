@@ -23,7 +23,7 @@
             <td>${item.name}</td>
             <td> <img src="${item.img_url}"></td>
             <td>
-                <form action="book/=${item.id}" method="post">
+                <form action="book/${item.id}" method="post">
                     <button type="submit">Select</button>
                     <sec:csrfInput />
                 </form>

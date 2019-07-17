@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9ef189b7-f648-4c55-8499-f3e533742372" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/tripadvisor/flightBooking/RabbitMqConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/RabbitMqConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/model/BookingDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../int/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../int/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../temp/int/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../temp/int/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/controller/TripAdvisorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/controller/TripAdvisorController.java" afterDir="false" />
-    </list>
+    <list default="true" id="9ef189b7-f648-4c55-8499-f3e533742372" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -305,7 +296,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28089000" />
+    <option name="totallyTimeSpent" value="28705000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />

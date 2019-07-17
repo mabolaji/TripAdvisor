@@ -1,6 +1,7 @@
-/*package com.tripadvisor.integration.controller;
+package com.tripadvisor.integration.controller;
 
 import com.tripadvisor.integration.model.*;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
@@ -18,8 +19,13 @@ import java.util.List;
 //@RequestMapping("/trip")
 public class TripAdvisorController {
 
+    private static final String EXCHANGE = "travel_advisory";
+    private static final String ROUTING_KEY = "flight_booking_queue";
+
     @Autowired
     private RestTemplate restTemplate;
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
 
     private String flight_service_url = "http://flight1-service/";
     private String hotel_service_url = "http://hotel-service/";
@@ -63,10 +69,16 @@ public class TripAdvisorController {
     }
 
     @PostMapping(value = "/book")
-    public String book(@RequestParam String email,@RequestParam String id)
+    public String book(@RequestParam String email,@RequestParam Long id)
     {
         System.out.println(id);
         FlightBook flights = (restTemplate.exchange(flight_service_url + "/api/book?email="+email+"&id="+id, HttpMethod.POST, null, new ParameterizedTypeReference<FlightBook>(){})).getBody();
+
+        BookingDto msg =  new BookingDto();
+        msg.setEmail(email);
+        msg.setFlightId(id);
+        rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY, msg);
+
         return "test";
     }
     @GetMapping(value = "/destination/{destination}")
@@ -80,4 +92,4 @@ public class TripAdvisorController {
         return  airports;
     }
 
-}*/
+}

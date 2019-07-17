@@ -1,4 +1,4 @@
-package com.tripadvisor.integration.controller;
+/*package com.tripadvisor.integration.controller;
 
 import com.tripadvisor.integration.model.*;
 import com.tripadvisor.integration.service.IBookingService;
@@ -132,3 +132,4 @@ public class HomeController {
     }
 
 }
+*/

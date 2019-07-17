@@ -17,4 +17,11 @@ public class HotelServiceImpl implements HotelService {
     public List<Hotel> findAllByCity(String city) {
         return hotelRepo.findAllByCity(city);
     }
+
+    @Override
+    public List<Hotel> findAll() {
+        return hotelRepo.findAll();
+    }
+
+
 }

@@ -10,5 +10,6 @@ import java.util.List;
 public interface HotelService  {
 
     List<Hotel> findAllByCity(String city);
+    List<Hotel> findAll();
 
 }

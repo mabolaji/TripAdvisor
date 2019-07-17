@@ -43,4 +43,9 @@ public class HotelResController {
         Room room = roomService.findRoom(roomId);
         reservationService.reserve(new Reservation(email,cIn,cOut,room));
     }
+
+    @GetMapping("/hotel-res/allhotels")
+    public List<Hotel> allHotels(){
+        return hotelService.findAll();
+    }
 }

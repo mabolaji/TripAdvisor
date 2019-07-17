@@ -25,7 +25,7 @@ public class FlightBookServiceImpl implements FlightBookService {
     @Autowired
     private AirplaneRepository airplaneRepository;
     @Override
-    public List<Flight> flightes(String departure, String arrival, LocalDate departureDate, LocalDate arrivalDate) {
+    public List<Flight> flightes(Long departure, Long arrival, LocalDate departureDate, LocalDate arrivalDate) {
         return flightRepository.findAllByDepartureAndArrivalAndDepartureDateAndArrivalDate(departure,arrival,departureDate,arrivalDate);
     }
 
@@ -44,12 +44,12 @@ public class FlightBookServiceImpl implements FlightBookService {
     }
 
     @Override
-    public List<Flight> flightesFilter(String departure, String arrival, LocalDate departureDate) {
+    public List<Flight> flightesFilter(Long departure, Long arrival, LocalDate departureDate) {
         return flightRepository.findAllByDepartureAndArrivalAndDepartureDate(departure,arrival,departureDate);
     }
 
     @Override
-    public List<Flight> departureFlight(String departure) {
+    public List<Flight> departureFlight(Long departure) {
         return flightRepository.findAllByDeparture(departure);
     }
 

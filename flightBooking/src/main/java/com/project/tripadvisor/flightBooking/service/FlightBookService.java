@@ -10,10 +10,10 @@ import java.util.List;
 
 public interface FlightBookService {
 
-    public List<Flight> flightes(String departure, String arrival, LocalDate departureDate, LocalDate arrivalDate);
+    public List<Flight> flightes(Long departure, Long arrival, LocalDate departureDate, LocalDate arrivalDate);
 
     public FlightBook bookFlight(String email, Flight flight);
-    public  List<Flight> flightesFilter(String departure, String arrival, LocalDate departureDate);
-    public List<Flight> departureFlight(String departure);
+    public  List<Flight> flightesFilter(Long departure, Long arrival, LocalDate departureDate);
+    public List<Flight> departureFlight(Long departure);
 
 }

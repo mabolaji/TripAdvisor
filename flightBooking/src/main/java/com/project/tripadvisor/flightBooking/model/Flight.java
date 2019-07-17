@@ -32,7 +32,8 @@ public class Flight {
     private Airlines airlines;
 
     private LocalDateTime arrivalDate;
-    @OneToMany(mappedBy = "flight")
+    @OneToMany
+    @JoinColumn
     @JsonManagedReference
     private List<FlightBook> flightBooks=new ArrayList();
 

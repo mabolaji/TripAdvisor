@@ -12,8 +12,32 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('#originId').change(function () {
-                $( "#booking" ).submit();
+                $("#booking").submit();
             })
+
+            var today = new Date();
+            today.setDate(today.getDate()+1);
+
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1; //January is 0!
+
+            var yyyy = today.getFullYear();
+            if (dd < 10) {
+                dd = '0' + dd
+            }
+            if (mm < 10) {
+                mm = '0' + mm
+            }
+
+            today = yyyy + '-' + mm + '-' + dd;
+            $('#from').attr("min", today);
+            $('#to').attr("min", today);
+
+            $('#search').click(function () {
+                //alert("ddd");
+                $("#booking").attr("action", "/search");
+                $("#booking").submit();
+            });
         });
     </script>
 
@@ -22,6 +46,9 @@
 <body>
 <h1>Hello</h1>
 
+<c:forEach items="${errors}" var="error">
+    <p style="color: red">${error}</p>
+</c:forEach>
 <form:form modelAttribute="booking" method="post">
     <form:errors path="*" element="div" cssClass="error"/>
     <table>
@@ -33,9 +60,6 @@
                     <form:options itemValue="id" itemLabel="name" items="${origins}"/>
                 </form:select>
             </td>
-            <td>
-                <form:errors path="originId"/>
-            </td>
         </tr>
         <tr>
             <td>destinations:</td>
@@ -45,21 +69,18 @@
                     <form:options itemValue="id" itemLabel="name" items="${destinations}"/>
                 </form:select>
             </td>
-            <td>
-                <form:errors path="originId"/>
-            </td>
         </tr>
 
         <tr>
             <td>Departure Date</td>
             <td>
-                <form:input type="date" path="from" class="date-picker" />
+                <form:input type="date" path="from" class="date-picker"/>
             </td>
         </tr>
         <tr>
             <td>Return Date</td>
             <td>
-                <form:input type="date" path="to" class="date-picker" />
+                <form:input type="date" path="to" class="date-picker"/>
             </td>
         </tr>
             <%--<tr>
@@ -100,8 +121,7 @@
                     </tr>  --%>
     </table>
 
-    <input id="Search" name="search" type="submit" value="Search"/>
 </form:form>
-
+<input name="search" id="search" type="button" value="Search"/>
 </body>
 </html>

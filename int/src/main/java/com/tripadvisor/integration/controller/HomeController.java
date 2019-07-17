@@ -22,7 +22,7 @@ public class HomeController {
     @Autowired
     private IBookingService bookingService;
 
-    @GetMapping
+    @GetMapping("home")
     public String index(){
         return  "index";
     }

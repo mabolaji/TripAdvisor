@@ -15,6 +15,10 @@
             $('#originId').change(function () {
                 $( "#booking" ).submit();
             })
+            
+            $('#search').click(function () {
+                $( "#booking" ).submit({url: '/search', type: 'post'});
+            })
         });
     </script>
 
@@ -100,14 +104,8 @@
                 </td>
             </tr>  --%>
     </table>
-
+    <button id="search" name="search" type="button">Search</button>
 </form:form>
-
-    <form action="search" modelAttribute="booking" name="searchfm" id="searchfm" method="post">
-        <button type="submit">Search</button>
-        <sec:csrfInput />
-    </form>
-
 
 </body>
 </html>

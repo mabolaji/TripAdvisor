@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ef189b7-f648-4c55-8499-f3e533742372" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../carRental/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../carRental/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../emailmanager/src/main/java/com/cs544/listener/EmailSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/../emailmanager/src/main/java/com/cs544/listener/EmailSender.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />

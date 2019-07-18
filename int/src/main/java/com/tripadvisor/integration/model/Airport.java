@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 public class Airport {
 
-    private  Long id;
+    private Long id;
 
     private String name;
 

@@ -1,9 +1,7 @@
-/*package com.tripadvisor.integration.controller;
+package com.tripadvisor.integration.controller;
 
-import com.tripadvisor.integration.model.Airlines;
-import com.tripadvisor.integration.model.Airport;
-import com.tripadvisor.integration.model.Flight;
-import com.tripadvisor.integration.model.RentalCompany;
+import com.tripadvisor.integration.model.*;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
@@ -19,55 +17,25 @@ import java.util.List;
 
 @Controller
 //@RequestMapping("/trip")
+@SessionAttributes({"arrival","cityid"})
 public class TripAdvisorController {
+
+    private static final String EXCHANGE = "travel_advisory";
+    private static final String ROUTING_KEY = "flight_booking_queue";
 
     @Autowired
     private RestTemplate restTemplate;
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
 
-//    @Autowired
-//    private WebClient.Builder webClientBuilder;
-//    private String airline_service_url = "http://flight-service/airlines/getairline";
-//    private String hotel_service_url = "http://hotel-service/hotel-res/allhotels";
-//    private String car_service_url = "http://car-service/carRental/company";
-//
-//    @GetMapping(value = "/home")
-//    public String home() {
-//        return "index";
-//    }
-//
-//
-//    @GetMapping(value = "/getairline")
-//    public String getAllAirlines(Model model) {
-//        ResponseEntity<List<Airlines>> airlines = restTemplate.exchange(airline_service_url, HttpMethod.GET, null, new ParameterizedTypeReference<List<Airlines>>() {
-//        });
-//        model.addAttribute("airline", airlines.getBody());
-//        return "test1";
-//    }
-//
-//    @GetMapping(value = "/getcarCompany")
-//    public List<RentalCompany> getAllCarCompanies() {
-//        ResponseEntity<List<RentalCompany>> companies = restTemplate.exchange(car_service_url, HttpMethod.GET, null, new ParameterizedTypeReference<List<RentalCompany>>() {
-//        });
-//
-//        return companies.getBody();    }
-//@Autowired
-//private WebClient.Builder webClientBuilder;
-    private String flight_service_url = "http://flight1-service/";
-    private String hotel_service_url = "http://hotel-service/hotel-res/allhotels";
+    private String flight_service_url = "http://flight-service/";
+    private String hotel_service_url = "http://hotel-service/";
     private String car_service_url = "http://car-service/carRental/company";
-
-
-//    @GetMapping(value = "/home")
-//    public String home()
-//    {
-//        return "index";
-//    }
-
 
     @GetMapping(value ="/getairline")
     public List<Airlines> getAllAirlines(){
         ResponseEntity<List<Airlines>> airlines = restTemplate.exchange(flight_service_url+"/api/getAirlines", HttpMethod.GET, null, new ParameterizedTypeReference<List<Airlines>>(){});
-//model.addAttribute("airline",airlines.getBody());
+
         return airlines.getBody();
     }
 
@@ -80,10 +48,10 @@ public class TripAdvisorController {
         return mdv;
     }
 
-    @GetMapping("/home")
+   /* @GetMapping("/home")
     public String home(){
-        return "index";
-    }
+        return "flights";
+    }*/
 
     @GetMapping(value ="/getcarCompany")
     public List<RentalCompany> getAllCarCompanies(){
@@ -93,16 +61,27 @@ public class TripAdvisorController {
     }
 
 
-    @GetMapping(value = "/searchFlight")
-    public List<Flight> searchFlight(@RequestParam String departure, @RequestParam String arrival, @RequestParam  String departureDate)
+    @PostMapping(value = "/searchFlight")
+    public String searchFlight(@RequestParam String departure, @RequestParam String arrival, @RequestParam  String departureDate,Model model)
     {
-        List<Flight> flights = (restTemplate.exchange(flight_service_url + "flight/flightFilter?departure="+departure+"&arrival="+arrival+"&departureDate="+departureDate, HttpMethod.GET, null, new ParameterizedTypeReference<List<Flight>>() {
-        }).getBody());
-
-//        http://localhost:8081/flight/all?departure=4&arrival=7&departureDate=2019-07-22&arrivalDate=2019-07-23
-        return  flights;
+        List<FlightDto> flights = (restTemplate.exchange(flight_service_url + "api/flightFilter?departure="+departure+"&arrival="+arrival+"&departureDate="+departureDate, HttpMethod.GET, null, new ParameterizedTypeReference<List<FlightDto>>(){})).getBody();
+//        List<Hotel> hotels =  (restTemplate.exchange(hotel_service_url + "api/hotles?city="+arrival, HttpMethod.GET, null, new ParameterizedTypeReference<List<Hotel>>(){})).getBody();
+        model.addAttribute("arrival",arrival);
+        model.addAttribute("flightlist",flights);
+        return "flightlist";
     }
 
+    @PostMapping(value = "/book")
+    public String book(@RequestParam String email,@RequestParam Long id,Model model)
+    {
+        System.out.println();
+        model.addAttribute("cityid",id);
+        BookingDto msg =  new BookingDto();
+        msg.setEmail(email);
+        msg.setFlightId(id);
+        rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY, msg);
+        return "redirect:/hotels";
+    }
     @GetMapping(value = "/destination/{destination}")
     public List<Airport> destination(@PathVariable String destination)
     {
@@ -110,9 +89,7 @@ public class TripAdvisorController {
         List<Airport> airports = (restTemplate.exchange(flight_service_url + "flight/destination/"+destination, HttpMethod.GET, null, new ParameterizedTypeReference<List<Airport>>() {
         }).getBody());
 
-//        http://localhost:8081/flight/all?departure=4&arrival=7&departureDate=2019-07-22&arrivalDate=2019-07-23
         return  airports;
     }
 
 }
-*/

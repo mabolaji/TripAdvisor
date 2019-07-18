@@ -19,7 +19,6 @@ target/
 *.iml
 *.ipr
 .idea
-*.idea
 .idea/**
 /idea/**
 ### NetBeans ###

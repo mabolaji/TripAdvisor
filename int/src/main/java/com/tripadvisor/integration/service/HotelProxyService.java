@@ -1,6 +1,8 @@
 package com.tripadvisor.integration.service;
 
+import com.tripadvisor.integration.model.Airport;
 import com.tripadvisor.integration.model.Hotel;
+import com.tripadvisor.integration.model.Room;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
@@ -15,15 +17,41 @@ public class HotelProxyService implements HotelService {
     @Autowired
     private RestTemplate restTemplate;
 
-    private final String hotelUrl = "http://localhost:8080/hotel-res/";
+    private String hotel_service_url = "http://hotel-service";
 
 
     @Override
     public List<Hotel> findAllHotels() {
+//        ResponseEntity<List<Hotel>> response =
+//                restTemplate.exchange(hotel_service_url +"/api/allhotels", HttpMethod.GET, null,
+//                        new ParameterizedTypeReference<List<Hotel>>() {
+//                        });
+
+
         ResponseEntity<List<Hotel>> response =
-                restTemplate.exchange(hotelUrl +"allhotels", HttpMethod.GET, null,
+                restTemplate.exchange(hotel_service_url+"/api/allhotels", HttpMethod.GET, null,
+                        new ParameterizedTypeReference<List<Hotel>>(){});
+
+        return response.getBody();
+    }
+
+    @Override
+    public List<Hotel> findbycity(String city) {
+                ResponseEntity<List<Hotel>> response =
+                restTemplate.exchange(hotel_service_url +"/api/hotels?city="+city, HttpMethod.GET, null,
                         new ParameterizedTypeReference<List<Hotel>>() {
                         });
-        return response.getBody();
+
+return  response.getBody();
+    }
+
+    @Override
+    public List<Room> rooms(String hotel) {
+        ResponseEntity<List<Room>> response =
+                restTemplate.exchange(hotel_service_url +"/apiroom/rooms?hotel="+hotel, HttpMethod.GET, null,
+                        new ParameterizedTypeReference<List<Room>>() {
+                        });
+
+        return  response.getBody();
     }
 }

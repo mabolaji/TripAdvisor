@@ -1,9 +1,11 @@
 package com.tripadvisor.integration.controller;
 
+
 import com.tripadvisor.integration.model.Booking;
-import com.tripadvisor.integration.model.Flight;
-import com.tripadvisor.integration.model.Restaurant;
+import com.tripadvisor.integration.model.BookingDto;
+import com.tripadvisor.integration.model.FlightDto;
 import com.tripadvisor.integration.service.IBookingService;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,31 +18,41 @@ import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
+//import org.springframework.web.reactive.function.client.WebClient;
+
 @Controller
+@SessionAttributes("arrival")
 public class HomeController {
 
     @Autowired
     private IBookingService bookingService;
 
-    @GetMapping("home")
-    public String index(){
-        return  "index";
+    private static final String EXCHANGE = "travel_advisory";
+    private static final String ROUTING_KEY = "flight_booking_queue";
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
+
+    @GetMapping(value = "/")
+    public String index() {
+        return "redirect:/home";
     }
 
-    @GetMapping("old")
-    public String index(@ModelAttribute("booking") Booking booking, Model model) {
+    @GetMapping(value = "/home")
+    public String home(@ModelAttribute("booking") Booking booking, Model model) {
 
         if (!model.containsAttribute("booking")) {
             model.addAttribute("booking", booking);
         }
+        if (!model.containsAttribute("errors")) {
+            model.addAttribute("errors", null);
+        }
         model.addAttribute("origins", bookingService.getOrigins());
         model.addAttribute("destinations", bookingService.getDestinations(booking.getOriginId()));
-
-
         return "home";
+
     }
 
-    @PostMapping
+    @PostMapping(value = "/home")
     public String reload(Booking booking, RedirectAttributes flash) {
         flash.addFlashAttribute("booking", booking);
         return "redirect:/home";
@@ -56,34 +68,32 @@ public class HomeController {
 
             for (ObjectError error : result.getAllErrors()) {
                 System.out.println(error.getDefaultMessage());
-                errors.add(error.getDefaultMessage());
+               // errors.add(error.getDefaultMessage());
             }
 
+            errors.add("All fields are required and make sure you enter valid values");
             flash.addFlashAttribute("errors", errors);
 
             return "redirect:/home";
-
-        } else if (booking.getFrom().compareTo(booking.getTo()) >= 0) {
+        }
+        /*} else if (booking.getFrom().compareTo(booking.getTo()) >= 0) {
 
             errors.add("Departure date must greater than return date");
             flash.addFlashAttribute("errors", errors);
 
             return "redirect:/home";
-        }
+        }*/
 
         return "redirect:/flights";
     }
 
     @GetMapping("/flights")
-    public String flights(
-            @Valid @ModelAttribute("booking") Booking booking, BindingResult result, Model model)
-    //@ModelAttribute("booking") Booking booking, Model model)
-    {
+    public String flights(@Valid @ModelAttribute("booking") Booking booking, BindingResult result, Model model) {
         if (model.containsAttribute("booking") && result.hasErrors() == false) {
-           // System.out.println("booking : " + booking);
-            List<Flight> flights = bookingService.getFlights(booking);
+            List<FlightDto> flights = bookingService.getFlights(booking);
 
-            // System.out.println(flights);
+            System.out.println(flights);
+            model.addAttribute("arrival",booking.getDestinationId());
             model.addAttribute("flights", flights);
 
         } else {
@@ -93,25 +103,21 @@ public class HomeController {
         return "flights";
     }
 
-    @PostMapping("/book/{id}")
-    public String book(@PathVariable Long id, RedirectAttributes flash) {
-
+    @PostMapping("/bookflight")
+    public String book(@RequestParam String email,@RequestParam Long id)
+    {
         if (id != null) {
-            return "redirect:/restaurants/" + id;
+
+            BookingDto msg = new BookingDto();
+            msg.setEmail(email);
+            msg.setFlightId(id);
+            rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY, msg);
+
+            return "redirect:/cars";
+            //return "redirect:/hotels";
         }
 
-        return "redirect:/flights";
+        return "redirect:/cars";
     }
 
-    @GetMapping("/restaurants/{flightId}")
-    public String restaurants(@PathVariable Long flightId, Model model) {
-        if (flightId == null) {
-            return "redirect:/home";
-        }
-
-        List<Restaurant> restaurants = bookingService.getRestaurants(flightId);
-        model.addAttribute("restaurants", restaurants);
-
-        return "restaurants";
-    }
 }

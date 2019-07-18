@@ -13,5 +13,14 @@ public class Room implements Serializable {
     private int beds;
     private double price;
     private int status;
+    private String type;
     private Hotel hotel;
+
+    @Override
+    public String toString() {
+        return
+                "Room # =" + roomNo +
+                ", Price =" + price +
+                ", T ype='" + type ;
+    }
 }

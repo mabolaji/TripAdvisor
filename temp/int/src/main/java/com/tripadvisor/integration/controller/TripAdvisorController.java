@@ -48,10 +48,10 @@ public class TripAdvisorController {
         return mdv;
     }
 
-    @GetMapping("/home")
+   /* @GetMapping("/home")
     public String home(){
         return "flights";
-    }
+    }*/
 
     @GetMapping(value ="/getcarCompany")
     public List<RentalCompany> getAllCarCompanies(){
@@ -68,7 +68,7 @@ public class TripAdvisorController {
 //        List<Hotel> hotels =  (restTemplate.exchange(hotel_service_url + "api/hotles?city="+arrival, HttpMethod.GET, null, new ParameterizedTypeReference<List<Hotel>>(){})).getBody();
         model.addAttribute("arrival",arrival);
         model.addAttribute("flightlist",flights);
-        return "flights";
+        return "flightlist";
     }
 
     @PostMapping(value = "/book")

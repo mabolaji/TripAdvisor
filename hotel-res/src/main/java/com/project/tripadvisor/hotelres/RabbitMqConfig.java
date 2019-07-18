@@ -1,7 +1,7 @@
-package com.mum.ea.project.carRental;
+package com.project.tripadvisor.hotelres;
 
 
-import com.mum.ea.project.carRental.listener.Booking;
+import com.project.tripadvisor.hotelres.listener.Booking;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.support.converter.DefaultClassMapper;
@@ -38,7 +38,7 @@ public class RabbitMqConfig {
         DefaultClassMapper classMapper = new DefaultClassMapper();
         Map<String, Class<?>> map = new HashMap<>();
 
-        map.put("com.tripadvisor.integration.model.CarBooking", Booking.class);
+        map.put("com.tripadvisor.integration.model.HotelBooking", Booking.class);
         map.put("com.mum.ea.project.carRental.listener.Email", Booking.class);
 
         classMapper.setIdClassMapping(map);

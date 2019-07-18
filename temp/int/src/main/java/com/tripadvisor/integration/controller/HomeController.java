@@ -64,8 +64,6 @@ public class HomeController {
         flash.addFlashAttribute("booking", booking);
         List<String> errors = new ArrayList<>();
 
-        //flash.addAttribute("arrival",booking.getDestinationId());
-
         if (result.hasErrors()) {
 
             for (ObjectError error : result.getAllErrors()) {
@@ -114,7 +112,8 @@ public class HomeController {
             msg.setFlightId(id);
             rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY, msg);
 
-            return "redirect:/cars";
+            //return "redirect:/cars";
+            return "redirect:/hotels";
         }
 
         return "redirect:/flights";

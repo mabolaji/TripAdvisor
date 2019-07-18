@@ -1,9 +1,10 @@
-package com.mum.ea.project.carRental.listener;
+package com.project.tripadvisor.hotelres.listener;
 
-import com.mum.ea.project.carRental.Model.Car;
-import com.mum.ea.project.carRental.Model.CarBookingRecord;
-import com.mum.ea.project.carRental.Service.CarBookingService;
-import com.mum.ea.project.carRental.Service.CarService;
+
+import com.project.tripadvisor.hotelres.domain.Hotel;
+import com.project.tripadvisor.hotelres.domain.Reservation;
+import com.project.tripadvisor.hotelres.service.HotelService;
+import com.project.tripadvisor.hotelres.service.ReservationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
@@ -15,34 +16,33 @@ import org.springframework.stereotype.Component;
 import java.util.Calendar;
 
 @Component
-@RabbitListener(queues = {"car_booking_queue"})
+@RabbitListener(queues = {"hotel_booking_queue"})
 public class BookingListener {
     private static final Logger LOGGER = LoggerFactory.getLogger(BookingListener.class);
 
     @Autowired
     private RabbitTemplate rabbitTemplate;
     private static final String EXCHANGE = "travel_advisory";
-    private static final String ROUTING_KEY = "car_booking_queue";
+    private static final String ROUTING_KEY = "hotel_booking_queue";
 
     @Autowired
-    private CarBookingService bookingService;
+    private ReservationService bookingService;
     @Autowired
-    private CarService carService;
+    private HotelService hotelService;
 
     @RabbitHandler
     public void receiveMessage(Booking booking) {
 
-        LOGGER.info(" receive car booking : " + booking.toString());
+        LOGGER.info(" receive  booking : " + booking.toString());
         try {
 
-            Car car = carService.getCar(booking.getCarId());
-            CarBookingRecord bookingRecord = new CarBookingRecord();
-            bookingRecord.setCar(car);
-            bookingRecord.setDropDate(booking.getDropDate());
-            bookingRecord.setPickdate(booking.getPickDate());
+            Hotel car = hotelService.findHotel(booking.getHotelId());
+            Reservation bookingRecord = new Reservation();
+            //bookingRecord.set(booking.getHotelId());
+           // bookingRecord.setCheckIn(booking.getInDate());
+            //bookingRecord.setCheckOut(booking.getOutDate());
             bookingRecord.setEmail(booking.getEmail());
-
-            bookingService.add(bookingRecord);
+            bookingService.reserve(bookingRecord);
             //send email to customer
             rabbitTemplate.convertAndSend(EXCHANGE, "email_queue", getEmail(booking.getEmail()));
             //todo : send email to Airline
@@ -60,4 +60,3 @@ public class BookingListener {
         return email;
     }
 }
-

@@ -150,6 +150,14 @@
             </div><!-- END-->
 
             <div class="row col-md-9">
+                <div class="col-md-12" th:if="${errors != null}" style="margin: auto">
+                    <div class="card-body">
+                        <p  style="color: red" th:each="error : ${errors}"
+                            th:text="${error}">
+                        </p>
+                    </div>
+                </div>
+
                 <div class="col-md-4" th:each="hotel: ${hotelsbycity}">
                     <div class="row">
                         <div class="col-sm col-md-12 ftco-animate">
@@ -181,20 +189,61 @@
                                     <hr>
                                     <p class="bottom-area d-flex">
                                         <span><i class="icon-map-o" th:text="${hotel.city}"></i></span>
-                                        <!--                                    <span class="ml-auto"><a href="#">Book Now</a></span>-->
-
-
                                         <button th:id="'hotel'+${hotel.id}" type="button"
                                                 class="btn btn-primary"
-                                                data-toggle="modal"
-                                        >
-                                            Book Flight
+                                                th:attr="data-target='#modal_hotel'+${hotel.id}"
+                                                data-toggle="modal" >
+                                            Book Hotel
                                         </button>
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <div class="modal fade" th:id="'modal_hotel'+${hotel.id}">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <form action="/hotels" method="post">
+
+                                            <div class="col-md align-items-end">
+                                                <div class="form-group">
+                                                    <div class="form-field">
+                                                        <input type="text" class="form-control" name="email" placeholder="Enter email address">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md align-items-end">
+                                                <div class="form-group">
+                                                    <div class="form-field">
+                                                        <input type="text" class="form-control checkin_date" name="inDate" placeholder="Check in date">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md align-items-end">
+                                                <div class="form-group">
+                                                    <div class="form-field">
+                                                        <input type="text" class="form-control checkout_date" name="outDate" placeholder="Check out date">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--                                <input type="hidden" class="form-control" name="id" placeholder="Enter email address">-->
+                                            <input type="hidden" name="hotelId" th:value="${hotel.id}">
+                                            <br>
+                                            <button type="submit" class="btn btn-primary">
+                                                Book
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 

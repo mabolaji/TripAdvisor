@@ -44,7 +44,7 @@ public class BookingListener {
 
             bookingService.add(bookingRecord);
             //send email to customer
-            //rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY, getEmail(booking.getEmail()));
+            rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY, getEmail(booking.getEmail()));
             //todo : send email to Airline
         } catch (Exception ex) {
             LOGGER.error(ex.toString());

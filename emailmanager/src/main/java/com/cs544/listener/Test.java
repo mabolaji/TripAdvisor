@@ -19,7 +19,7 @@ public class Test {
     private static final String EXCHANGE = "travel_advisory";
     private static final String ROUTING_KEY = "email_queue";
 
-    @Scheduled(fixedRate = 10000)
+   // @Scheduled(fixedRate = 10000)
     public void Test() {
         LOGGER.info("Sending sample email");
         rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY, getSampleEmail());

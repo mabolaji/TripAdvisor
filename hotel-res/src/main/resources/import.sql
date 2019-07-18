@@ -1,5 +1,3 @@
-
-
 -- INSERT INTO Hotel VALUES (null , 'Addis Ababa', 'Desc about Sheraton', 'image','Sheraton')
 -- INSERT INTO Hotel VALUES (null , 'Addis Ababa', 'Desc about Sheraton', 'image','Hilton')
 -- INSERT INTO Hotel VALUES (null , 'Addis Ababa', 'Desc about Sheraton', 'image','Jupiter')

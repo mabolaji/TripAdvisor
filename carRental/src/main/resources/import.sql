@@ -31,10 +31,10 @@ INSERT INTO carrental.Car VALUES (null,'Rav4 2019', 'BMW', 'automatic', 'AC', 'h
 
 INSERT INTO carrental.Car VALUES (null,'Altima', 'Nissan', 'automatic', 'AC', 'https://www.caranddriver.com/nissan/altima','Plate030', 40, 4, 1, 1);
 INSERT INTO carrental.Car VALUES (null,'Armada', 'Nissan', 'automatic', 'AC', 'https://hips.hearstapps.com/amv-prod-cad-assets.s3.amazonaws.com/vdat/submodels/nissan_armada_nissan-armada_2019-1547677861988.jpg','Plate031', 50, 4, 1, 2);
-INSERT INTO carrental.Car VALUES (null,'GTR', 'Nissan', 'automatic', 'AC', 'https://www.caranddriver.com/nissan/gt-r','Plate033' 80, 4, 1, 3);
-INSERT INTO carrental.Car VALUES (null,'Leaf', 'Nissan', 'automatic', 'AC', 'https://hips.hearstapps.com/amv-prod-cad-assets.s3.amazonaws.com/vdat/submodels/nissan_leaf_nissan-leaf_2019-1547072502347.jpg', 'Plate033'60, 4, 1, 4);
+INSERT INTO carrental.Car VALUES (null,'GTR', 'Nissan', 'automatic', 'AC', 'https://www.caranddriver.com/nissan/gt-r','Plate033', 80, 4, 1, 3);
+INSERT INTO carrental.Car VALUES (null,'Leaf', 'Nissan', 'automatic', 'AC', 'https://hips.hearstapps.com/amv-prod-cad-assets.s3.amazonaws.com/vdat/submodels/nissan_leaf_nissan-leaf_2019-1547072502347.jpg', 'Plate033',60, 4, 1, 4);
 INSERT INTO carrental.Car VALUES (null,'Kicks', 'Nissan', 'automatic', 'AC', 'https://www.caranddriver.com/nissan/kicks','Plate034', 50, 4, 1, 5);
-INSERT INTO carrental.Car VALUES (null,'Rogue', 'Nissan', 'automatic', 'AC', 'https://www.caranddriver.com/nissan/rogue','Plate035' 50, 4, 1, 6);
+INSERT INTO carrental.Car VALUES (null,'Rogue', 'Nissan', 'automatic', 'AC', 'https://www.caranddriver.com/nissan/rogue','Plate035', 50, 4, 1, 6);
 INSERT INTO carrental.Car VALUES (null,'Versa Note', 'Nissan', 'automatic', 'AC', 'https://hips.hearstapps.com/amv-prod-cad-assets.s3.amazonaws.com/vdat/submodels/nissan_versa-note_nissan-versa-note_2019-1549390757451.jpg','Plate036', 40, 4, 1, 7);
 
 

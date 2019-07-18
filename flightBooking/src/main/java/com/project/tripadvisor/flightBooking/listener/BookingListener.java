@@ -33,7 +33,7 @@ public class BookingListener {
         try {
             FlightBook flight = bookService.bookFlight(booking.getEmail(), booking.getFlightId());
             //send email to customer
-            rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY, getEmail(flight.getEmail()));
+            //rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY, getEmail(flight.getEmail()));
             //todo : send email to Airline
         } catch (Exception ex) {
             LOGGER.error(ex.toString());

@@ -27,7 +27,7 @@ public class TripAdvisorController {
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
-    private String flight_service_url = "http://flight1-service/";
+    private String flight_service_url = "http://flight-service/";
     private String hotel_service_url = "http://hotel-service/";
     private String car_service_url = "http://car-service/carRental/company";
 
@@ -64,6 +64,9 @@ public class TripAdvisorController {
     public String searchFlight(@RequestParam String departure, @RequestParam String arrival, @RequestParam  String departureDate,Model model)
     {
         List<FlightDto> flights = (restTemplate.exchange(flight_service_url + "api/flightFilter?departure="+departure+"&arrival="+arrival+"&departureDate="+departureDate, HttpMethod.GET, null, new ParameterizedTypeReference<List<FlightDto>>(){})).getBody();
+        List<Hotel> hotels =  (restTemplate.exchange(hotel_service_url + "api/hotles?city="+arrival, HttpMethod.GET, null, new ParameterizedTypeReference<List<Hotel>>(){})).getBody();
+        model.addAttribute("hotel1",hotels.get(0));
+        model.addAttribute("hotel12",hotels.get(1));
         model.addAttribute("flightlist",flights);
         return "flights";
     }
@@ -71,14 +74,10 @@ public class TripAdvisorController {
     @PostMapping(value = "/book")
     public String book(@RequestParam String email,@RequestParam Long id)
     {
-        System.out.println(id);
-        FlightBook flights = (restTemplate.exchange(flight_service_url + "/api/book?email="+email+"&id="+id, HttpMethod.POST, null, new ParameterizedTypeReference<FlightBook>(){})).getBody();
-
         BookingDto msg =  new BookingDto();
         msg.setEmail(email);
         msg.setFlightId(id);
         rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY, msg);
-
         return "test";
     }
     @GetMapping(value = "/destination/{destination}")
@@ -88,7 +87,6 @@ public class TripAdvisorController {
         List<Airport> airports = (restTemplate.exchange(flight_service_url + "flight/destination/"+destination, HttpMethod.GET, null, new ParameterizedTypeReference<List<Airport>>() {
         }).getBody());
 
-//        http://localhost:8081/flight/all?departure=4&arrival=7&departureDate=2019-07-22&arrivalDate=2019-07-23
         return  airports;
     }
 

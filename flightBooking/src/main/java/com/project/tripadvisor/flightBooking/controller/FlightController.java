@@ -112,44 +112,24 @@ public class FlightController {
         return flights;
     }
 
-
     @GetMapping("/test")
     public List<Flight> flights() {
         return flightRepository.findAll();
     }
-    /*@GetMapping("/test2")
-    public List<FlightDto> flights2()
-    {
-        List<FlightDto> list =  new ArrayList<>();
-          flightRepository.searchFlights()
-                .stream()
-                .forEach(f -> {
-                    FlightDto data =  new FlightDto();
-                    data.setFlightNumber(f.getFlightNumber());
-                    data.setAirLine(f.getAirplane().getAirline().getName());
-                    data.setArrival_city(f.getArrival().getCity());
-                    data.setId(f.getId());
-                    data.setArrival_city(f.getArrival().getCity());
-                    data.setArrival_date(f.getArrivalDate());
-                    data.setDeparture_date(f.getDepartureDate());
-                    data.setReg_num(f.getAirplane().getRegestrationNo());
-                    data.setDeparture_city(f.getDeparture().getCity());
-                    list.add(data);
-                });
-
-          return  list;
-    }*/
 
     @GetMapping("/test111")
     public List<Flight> test(@RequestParam String arrival, @RequestParam String departure) {
         return flightBookService.test(arrival, departure);
     }
-
     @PostMapping("/book")
-    public FlightBook bookFlight(@RequestParam String email, @RequestBody Flight flight) {
-        return flightBookService.bookFlight(email, flight);
-    }
+    public FlightBook bookFlight(@RequestParam String email, @RequestParam String id)
+    {
+        System.out.println("testtttttttt "+email +" "+id);
 
+        Flight flight=flightRepository.findById(Long.parseLong(id)).get();
+        System.out.println(flight.getDepartureDate()+"testtttttttttttt");
+        return flightBookService.bookFlight(email,flight);
+    }
     @GetMapping(value = "/origins")
     public List<Airport> getAirports() {
         return airportService.getOrigin();

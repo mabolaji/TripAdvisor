@@ -3,8 +3,10 @@ package com.project.tripadvisor.hotelres.listener;
 
 import com.project.tripadvisor.hotelres.domain.Hotel;
 import com.project.tripadvisor.hotelres.domain.Reservation;
+import com.project.tripadvisor.hotelres.domain.Room;
 import com.project.tripadvisor.hotelres.service.HotelService;
 import com.project.tripadvisor.hotelres.service.ReservationService;
+import com.project.tripadvisor.hotelres.service.RoomService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
@@ -29,19 +31,23 @@ public class BookingListener {
     private ReservationService bookingService;
     @Autowired
     private HotelService hotelService;
+    @Autowired
+    private RoomService roomService;
 
     @RabbitHandler
-    public void receiveMessage(Booking booking) {
+    public void receiveMessage(HotelBooking booking) {
 
         LOGGER.info(" receive  booking : " + booking.toString());
         try {
 
-            Hotel car = hotelService.findHotel(booking.getHotelId());
+            Room room = roomService.findRoom(booking.getRoomId());
+
             Reservation bookingRecord = new Reservation();
-            //bookingRecord.set(booking.getHotelId());
-           // bookingRecord.setCheckIn(booking.getInDate());
-            //bookingRecord.setCheckOut(booking.getOutDate());
+            bookingRecord.setRoom(room);
+            bookingRecord.setCheckIn(booking.getInDate());
+            bookingRecord.setCheckOut(booking.getOutDate());
             bookingRecord.setEmail(booking.getEmail());
+
             bookingService.reserve(bookingRecord);
             //send email to customer
             rabbitTemplate.convertAndSend(EXCHANGE, "email_queue", getEmail(booking.getEmail()));

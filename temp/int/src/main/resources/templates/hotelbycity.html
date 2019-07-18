@@ -155,6 +155,11 @@
                                     </div>
                                     <p th:text="${hotel.description}"></p>
                                     <hr>
+
+
+<!--                                    <form action="/hotels" method="get">-->
+                                    <input type="hidden" name="hotel" th:value="${hotel.name}">
+
                                     <p class="bottom-area d-flex">
                                         <span><i class="icon-map-o" th:text="${hotel.city}"></i></span>
                                         <button th:id="'hotel'+${hotel.id}" type="button"
@@ -164,6 +169,7 @@
                                             Book Hotel
                                         </button>
                                     </p>
+<!--                                    </form>-->
                                 </div>
                             </div>
                         </div>
@@ -175,6 +181,9 @@
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <form action="/hotels" method="post">
+<!--                                            <input type="hidden" name="carId" th:value="${car.id}">-->
+
+                                           <!--<h5> <span th:text="${hotel.name}"></span></h5>-->
 
                                             <div class="col-md align-items-end">
                                                 <div class="form-group">
@@ -198,6 +207,23 @@
                                                     </div>
                                                 </div>
                                             </div>
+
+
+
+                                            <div class="col-md align-items-end">
+                                                <div class="form-group">
+                                                    <div class="form-field">
+                                                        <select class="form-control form-control-lg custom-select" name="roomId">
+                                                            <option selected>Select Origin</option>
+                                                            <option th:each="room : ${hotel.roooms}" th:value="${room.id}" th:text="${room}"></option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
                                             <!--                                <input type="hidden" class="form-control" name="id" placeholder="Enter email address">-->
                                             <input type="hidden" name="hotelId" th:value="${hotel.id}">
                                             <br>

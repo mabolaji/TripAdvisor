@@ -7,6 +7,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Data
@@ -20,9 +21,11 @@ public class HotelBooking  implements Serializable {
    private Long hotelId;
    @NotNull(message = "In valid check in date")
    @FutureOrPresent
-   private Date inDate;
+   private LocalDate inDate;
    @NotNull(message = "In valid check out date")
    @FutureOrPresent
-   private  Date outDate;
+   private  LocalDate outDate;
+   @NotNull(message = "Kindly select a room")
+   private Long roomId ;
 
 }

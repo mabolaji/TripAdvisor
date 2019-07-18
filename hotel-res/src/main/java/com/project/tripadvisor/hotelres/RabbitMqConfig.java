@@ -1,7 +1,7 @@
 package com.project.tripadvisor.hotelres;
 
 
-import com.project.tripadvisor.hotelres.listener.Booking;
+import com.project.tripadvisor.hotelres.listener.HotelBooking;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.support.converter.DefaultClassMapper;
@@ -17,29 +17,26 @@ import java.util.Map;
 public class RabbitMqConfig {
 
     @Bean
-    public MessageConverter messageConverter()
-    {
+    public MessageConverter messageConverter() {
         Jackson2JsonMessageConverter jsonMessageConverter = new Jackson2JsonMessageConverter();
         jsonMessageConverter.setClassMapper(classMapper());
         return jsonMessageConverter;
     }
 
     @Bean
-    public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory)
-    {
+    public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory) {
         RabbitTemplate template = new RabbitTemplate(connectionFactory);
         template.setMessageConverter(messageConverter());
         return template;
     }
 
     @Bean
-    public DefaultClassMapper classMapper()
-    {
+    public DefaultClassMapper classMapper() {
         DefaultClassMapper classMapper = new DefaultClassMapper();
         Map<String, Class<?>> map = new HashMap<>();
 
-        map.put("com.tripadvisor.integration.model.HotelBooking", Booking.class);
-        map.put("com.mum.ea.project.carRental.listener.Email", Booking.class);
+        map.put("com.tripadvisor.integration.model.HotelBooking", HotelBooking.class);
+        map.put("com.mum.ea.project.carRental.listener.Email", HotelBooking.class);
 
         classMapper.setIdClassMapping(map);
         return classMapper;

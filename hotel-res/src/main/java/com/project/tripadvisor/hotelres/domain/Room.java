@@ -19,7 +19,9 @@ public class Room {
     private double price;
     private int status;
     private String image;
+    private String type;
     @ManyToOne
     @JsonBackReference
     private Hotel hotel;
+
 }

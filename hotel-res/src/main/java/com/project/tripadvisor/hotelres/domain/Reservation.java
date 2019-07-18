@@ -15,12 +15,12 @@ public class Reservation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String email;
-    private LocalDate checkIn;
-    private LocalDate checkOut;
+    private Date checkIn;
+    private Date checkOut;
     @OneToOne(cascade = CascadeType.ALL)
     private Room room;
 
-    public Reservation(String email, LocalDate checkIn, LocalDate checkOut, Room room) {
+    public Reservation(String email, Date checkIn, Date checkOut, Room room) {
         this.email = email;
         this.checkIn = checkIn;
         this.checkOut = checkOut;

@@ -1,10 +1,7 @@
 
 package com.tripadvisor.integration.controller;
 
-import com.tripadvisor.integration.model.Airport;
-import com.tripadvisor.integration.model.CarBooking;
-import com.tripadvisor.integration.model.Hotel;
-import com.tripadvisor.integration.model.HotelBooking;
+import com.tripadvisor.integration.model.*;
 import com.tripadvisor.integration.service.FlightService;
 import com.tripadvisor.integration.service.HotelService;
 import com.tripadvisor.integration.util.Common;
@@ -35,11 +32,15 @@ public class HotelController {
     @Autowired
     FlightService flightService;
     @GetMapping("/hotels")
-    public String  hotels(Model model, HttpSession httpSession){
+    public String  hotels(Model model, HttpSession httpSession,String hotel){
         Airport city=flightService.city(httpSession.getAttribute("arrival").toString());
         List<Hotel> hotelList=hotelService.findbycity(city.getCity());
-
-        System.out.println("from hotel  "+hotelList.size());
+        //List<Room> rooms=hotelService.rooms();
+//        System.out.println("from hotel roommmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm "+hotelList.size());
+        System.out.println(hotelList);
+        for (Hotel h: hotelList){
+            System.out.println(h.getRoooms());
+        }
         model.addAttribute("hotelsbycity", hotelList);
         return "hotelbycity";
     }
@@ -64,6 +65,7 @@ public class HotelController {
             return "redirect:/hotels";
         }
         else{
+            System.out.println(booking);
             rabbitTemplate.convertAndSend(Common.EXCHANGE, ROUTING_KEY, booking);
             return "redirect:/cars" ;
         }

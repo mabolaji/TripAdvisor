@@ -8,7 +8,13 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 
-public class Booking {
+public class HotelBooking {
+    private String email;
+    private Long hotelId;
+    private Date inDate;
+    private  Date outDate;
+    private Long roomId ;
+
     public String getEmail() {
         return email;
     }
@@ -41,9 +47,11 @@ public class Booking {
         this.outDate = outDate;
     }
 
-    private String email;
-    private Long hotelId;
-    private Date inDate;
-    private  Date outDate;
+    public Long getRoomId() {
+        return roomId;
+    }
 
+    public void setRoomId(Long roomId) {
+        this.roomId = roomId;
+    }
 }

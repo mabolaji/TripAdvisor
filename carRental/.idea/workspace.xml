@@ -2,7 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf102474-4bba-4281-a52a-d48ba6dea99c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flightBooking/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flightBooking/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flightBooking/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flightBooking/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flightBooking/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../flightBooking/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flightBooking/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../flightBooking/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/RabbitMqConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/RabbitMqConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/controller/RoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/controller/RoomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/domain/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/domain/Reservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/domain/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/domain/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/listener/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/listener/HotelBooking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/listener/BookingListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/listener/BookingListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-res/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../hotel-res/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-res/src/main/resources/import.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../hotel-res/src/main/resources/import.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hotel-service" beforeDir="false" afterPath="$PROJECT_DIR$/../hotel-service" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/controller/HotelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/controller/HotelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/model/HotelBooking.java" beforeDir="false" afterPath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/model/HotelBooking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/model/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/model/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/service/HotelProxyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/service/HotelProxyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/service/HotelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/service/HotelService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/int/src/main/resources/templates/hotelbycity.html" beforeDir="false" afterPath="$PROJECT_DIR$/../temp/int/src/main/resources/templates/hotelbycity.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -52,10 +74,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mum/ea/project/carRental/listener/BookingListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
+            <state relative-caret-position="350">
               <caret line="36" selection-start-line="36" selection-end-line="36" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -68,19 +90,10 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mum/ea/project/carRental/RabbitMqConfig.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="510">
-              <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+              <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mum/ea/project/carRental/listener/Email.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -90,18 +103,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
               <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mum/ea/project/carRental/Service/CarBookingService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -124,17 +125,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
+            <state relative-caret-position="170">
+              <caret line="10" column="25" lean-forward="true" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/import.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="15" column="61" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mum/ea/project/carRental/Model/CarBookingRecord.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+            <state relative-caret-position="204">
+              <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -208,9 +218,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/mum/ea/project/carRental/Model/CarDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mum/ea/project/carRental/Controller/CarController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mum/ea/project/carRental/listener/Booking.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/mum/ea/project/carRental/Model/RentalCompany.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mum/ea/project/carRental/Model/Rentalcompany.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
       </list>
     </option>
   </component>
@@ -221,7 +231,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="1920" />
     <option name="height" value="1080" />
   </component>
@@ -318,8 +328,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -387,13 +395,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65055000" />
+    <option name="totallyTimeSpent" value="65923000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.33802816" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22199866" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -404,7 +412,7 @@
       <window_info id="Learn" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.34776536" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32390383" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -589,8 +597,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/import.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" selection-start-line="13" selection-end-line="14" />
+        <state relative-caret-position="204">
+          <caret line="15" column="61" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -628,20 +636,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mum/ea/project/carRental/listener/BookingListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mum/ea/project/carRental/RabbitMqConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="510">
+          <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mum/ea/project/carRental/RabbitMqConfig.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mum/ea/project/carRental/Model/Rentalcompany.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+        <state relative-caret-position="340">
+          <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mum/ea/project/carRental/listener/BookingListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -650,15 +668,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
+        <state relative-caret-position="170">
+          <caret line="10" column="25" lean-forward="true" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mum/ea/project/carRental/Model/Rentalcompany.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mum/ea/project/carRental/Model/CarBookingRecord.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+        <state relative-caret-position="204">
+          <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

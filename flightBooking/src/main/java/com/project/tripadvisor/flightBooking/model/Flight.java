@@ -32,10 +32,10 @@ public class Flight {
     private Airlines airlines;
 
     private LocalDateTime arrivalDate;
-    @OneToMany
-    @JoinColumn
-    @JsonManagedReference
-    private List<FlightBook> flightBooks=new ArrayList();
+//    @OneToMany
+//    @JoinColumn
+//    @JsonManagedReference
+//    private List<FlightBook> flightBooks=new ArrayList();
 
     @ManyToOne
     @JsonBackReference

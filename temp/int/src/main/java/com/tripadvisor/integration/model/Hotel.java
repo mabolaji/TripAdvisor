@@ -8,25 +8,14 @@ import java.util.List;
 
 
 @Data
-public class Hotel implements Serializable {
+public class Hotel{
     private Long id;
     private String name;
     private String description;
     private String image;
     private String city;
     private List<Room> roooms = new ArrayList<>();
-    public Hotel(String name, String description, String image, String city) {
-        this.name = name;
-        this.description = description;
-        this.image = image;
-        this.city = city;
-    }
 
-    public boolean addRoom(Room room){
-        if(roooms.add(room)){
-            room.setHotel(this);
-            return true;
-        }
-        return false;
-    }
+
+
 }

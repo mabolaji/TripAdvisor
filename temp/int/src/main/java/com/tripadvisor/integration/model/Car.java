@@ -24,10 +24,10 @@ public class Car {
 
     private String carTransmissiontype;
 
-    private List<CarBookingRecord> carbookinglist;
+    private List<CarBooking> carbookinglist;
 private RentalCompany rentalComp;
 
-    public Car(String carName, String brand, boolean status, String imageurl, int seatingCapacity, @Positive double price, String carTransmissiontype, List<CarBookingRecord> carbookinglist, RentalCompany rentalComp) {
+    public Car(String carName, String brand, boolean status, String imageurl, int seatingCapacity, @Positive double price, String carTransmissiontype, List<CarBooking> carbookinglist, RentalCompany rentalComp) {
         this.carName = carName;
         this.brand = brand;
         this.status = status;

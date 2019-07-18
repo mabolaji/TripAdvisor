@@ -36,6 +36,7 @@ public class RabbitMqConfig {
     {
         DefaultClassMapper classMapper = new DefaultClassMapper();
         Map<String, Class<?>> map = new HashMap<>();
+        map.put("com.project.tripadvisor.flightBooking.listener.Email", Booking.class);
         map.put("com.cs544.user.user.model", Booking.class);
         classMapper.setIdClassMapping(map);
         return classMapper;

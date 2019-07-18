@@ -1,5 +1,6 @@
 package com.tripadvisor.integration.service;
 
+import com.tripadvisor.integration.model.Airport;
 import com.tripadvisor.integration.model.Hotel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
@@ -15,15 +16,21 @@ public class HotelProxyService implements HotelService {
     @Autowired
     private RestTemplate restTemplate;
 
-    private final String hotelUrl = "http://localhost:8080/hotel-res/";
+    private String hotel_service_url = "http://hotel-service";
 
 
     @Override
     public List<Hotel> findAllHotels() {
+//        ResponseEntity<List<Hotel>> response =
+//                restTemplate.exchange(hotel_service_url +"/api/allhotels", HttpMethod.GET, null,
+//                        new ParameterizedTypeReference<List<Hotel>>() {
+//                        });
+
+
         ResponseEntity<List<Hotel>> response =
-                restTemplate.exchange(hotelUrl +"allhotels", HttpMethod.GET, null,
-                        new ParameterizedTypeReference<List<Hotel>>() {
-                        });
+                restTemplate.exchange(hotel_service_url+"/api/allhotels", HttpMethod.GET, null,
+                        new ParameterizedTypeReference<List<Hotel>>(){});
+
         return response.getBody();
     }
 }

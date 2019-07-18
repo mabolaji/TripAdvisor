@@ -17,6 +17,7 @@ import java.util.List;
 
 @Controller
 //@RequestMapping("/trip")
+@SessionAttributes("arrival")
 public class TripAdvisorController {
 
     private static final String EXCHANGE = "travel_advisory";
@@ -64,9 +65,8 @@ public class TripAdvisorController {
     public String searchFlight(@RequestParam String departure, @RequestParam String arrival, @RequestParam  String departureDate,Model model)
     {
         List<FlightDto> flights = (restTemplate.exchange(flight_service_url + "api/flightFilter?departure="+departure+"&arrival="+arrival+"&departureDate="+departureDate, HttpMethod.GET, null, new ParameterizedTypeReference<List<FlightDto>>(){})).getBody();
-        List<Hotel> hotels =  (restTemplate.exchange(hotel_service_url + "api/hotles?city="+arrival, HttpMethod.GET, null, new ParameterizedTypeReference<List<Hotel>>(){})).getBody();
-        model.addAttribute("hotel1",hotels.get(0));
-        model.addAttribute("hotel12",hotels.get(1));
+//        List<Hotel> hotels =  (restTemplate.exchange(hotel_service_url + "api/hotles?city="+arrival, HttpMethod.GET, null, new ParameterizedTypeReference<List<Hotel>>(){})).getBody();
+        model.addAttribute("arrival",arrival);
         model.addAttribute("flightlist",flights);
         return "flights";
     }
@@ -78,7 +78,7 @@ public class TripAdvisorController {
         msg.setEmail(email);
         msg.setFlightId(id);
         rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY, msg);
-        return "test";
+        return "redirect:/cars";
     }
     @GetMapping(value = "/destination/{destination}")
     public List<Airport> destination(@PathVariable String destination)

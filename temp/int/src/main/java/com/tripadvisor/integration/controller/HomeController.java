@@ -1,38 +1,41 @@
 package com.tripadvisor.integration.controller;
 
 
-import com.tripadvisor.integration.model.*;
+import com.tripadvisor.integration.model.Booking;
+import com.tripadvisor.integration.model.BookingDto;
+import com.tripadvisor.integration.model.FlightDto;
 import com.tripadvisor.integration.service.IBookingService;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.ParameterizedTypeReference;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.RestTemplate;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-//import org.springframework.web.reactive.function.client.WebClient;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
+//import org.springframework.web.reactive.function.client.WebClient;
+
 @Controller
-//@RequestMapping("/home")
 public class HomeController {
 
     @Autowired
     private IBookingService bookingService;
 
+    private static final String EXCHANGE = "travel_advisory";
+    private static final String ROUTING_KEY = "flight_booking_queue";
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
+
     @GetMapping(value = "/")
     public String index() {
         return "redirect:/home";
     }
+
     @GetMapping(value = "/home")
     public String home(@ModelAttribute("booking") Booking booking, Model model) {
 
@@ -40,25 +43,12 @@ public class HomeController {
             model.addAttribute("booking", booking);
         }
         if (!model.containsAttribute("errors")) {
-            model.addAttribute("errors",  null);
+            model.addAttribute("errors", null);
         }
         model.addAttribute("origins", bookingService.getOrigins());
         model.addAttribute("destinations", bookingService.getDestinations(booking.getOriginId()));
         return "home";
 
-         /*
-        ModelAndView mdv=new ModelAndView();
-        //ResponseEntity<List<Airport>> airlines = restTemplate.exchange(flight_service_url+"/api/origins", HttpMethod.GET, null, new ParameterizedTypeReference<List<Airport>>(){});
-        mdv.setViewName("home");
-        //mdv.addObject("airlines",airlines.getBody());
-        return mdv;
-        //
-
-        ModelAndView mdv = new ModelAndView();
-        //ResponseEntity<List<Airport>> airlines = restTemplate.exchange(flight_service_url+"/api/origins", HttpMethod.GET, null, new ParameterizedTypeReference<List<Airport>>(){});
-        mdv.setViewName("home");
-        mdv.addObject("airlines", bookingService.getOrigins());
-        return mdv;*/
     }
 
     @PostMapping(value = "/home")
@@ -96,10 +86,11 @@ public class HomeController {
     }
 
     @GetMapping("/flights")
-    public String flights(@Valid @ModelAttribute("booking") Booking booking, BindingResult result, Model model)
-    {
+    public String flights(@Valid @ModelAttribute("booking") Booking booking, BindingResult result, Model model) {
         if (model.containsAttribute("booking") && result.hasErrors() == false) {
             List<FlightDto> flights = bookingService.getFlights(booking);
+
+            System.out.println(flights);
 
             model.addAttribute("flights", flights);
 
@@ -108,5 +99,21 @@ public class HomeController {
         }
 
         return "flights";
+    }
+
+    @PostMapping("/bookflight")
+    public String book(@RequestParam String email,@RequestParam Long id)
+    {
+        if (id != null) {
+
+            BookingDto msg = new BookingDto();
+            msg.setEmail(email);
+            msg.setFlightId(id);
+            rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY, msg);
+
+            return "redirect:/restaurants/" + id;
+        }
+
+        return "redirect:/flights";
     }
 }

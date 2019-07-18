@@ -126,9 +126,21 @@
 </div>
 
 <table class="table table-striped" style="width: 700px">
-    <tbody>
+    <tbody >
 
-    <tr th:each="flight: ${flights}">
+    <tr th:if="${flights == null}">
+        <!--<div   >-->
+        <div class="card w-50" style="margin: auto">
+            <div class="card-body">
+ <h4>No flight found, kindly try again with different criteria</h4>
+            </div>
+        </div>
+        <br>
+        <!--</div>-->
+    </tr>
+    </tr>
+
+    <tr th:if="${flights != null}"  th:each="flight: ${flights}">
 
 <!--<div   >-->
         <div class="card w-50" style="margin: auto">
@@ -146,7 +158,6 @@
                         >
                    Book Flight
                 </button>
-<!--              data-target="#myModal"  <a href="myModalCheckBalance" data-toggle="modal" class="btn btn-primary" style="">Book</a>-->
             </div>
         </div>
 
@@ -155,11 +166,10 @@
                 <div class="modal-content">
                     <div class="modal-body">
                         <div class="form-group">
-                            <form action="/book" method="post">
+                            <form action="/bookflight" method="post">
                             <input type="text" class="form-control" name="email" placeholder="Enter email address">
-<!--                                <input type="hidden" class="form-control" name="id" placeholder="Enter email address">-->
-                                <input type="hidden" name="id" th:value="${flight.id}">
                                 <br>
+                                <input type="hidden" name="id" th:value="${flight.id}">
                             <button type="submit" class="btn btn-primary">
                                 Book Flight
                             </button>

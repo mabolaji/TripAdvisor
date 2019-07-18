@@ -31,7 +31,8 @@ public class CarController {
     public String cars(Model model, HttpSession httpSession) {
 
         try {
-            String id = (String) httpSession.getAttribute("arrival");
+            //System.out.println("httpSession.getAttribute(\"arrival\") : " +httpSession.getAttribute("arrival"));
+            String id =  httpSession.getAttribute("arrival").toString();
             model.addAttribute("cars", carProxyService.findCars(id));
             return "cars";
         }

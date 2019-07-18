@@ -64,7 +64,7 @@ public class HomeController {
         flash.addFlashAttribute("booking", booking);
         List<String> errors = new ArrayList<>();
 
-        flash.addAttribute("arrival",booking.getDestinationId());
+        //flash.addAttribute("arrival",booking.getDestinationId());
 
         if (result.hasErrors()) {
 
@@ -94,7 +94,7 @@ public class HomeController {
             List<FlightDto> flights = bookingService.getFlights(booking);
 
             System.out.println(flights);
-
+            model.addAttribute("arrival",booking.getDestinationId());
             model.addAttribute("flights", flights);
 
         } else {

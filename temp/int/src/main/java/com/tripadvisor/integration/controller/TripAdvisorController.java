@@ -78,7 +78,7 @@ public class TripAdvisorController {
         msg.setEmail(email);
         msg.setFlightId(id);
         rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY, msg);
-        return "redirect:/cars";
+        return "redirect:/cars/";
     }
     @GetMapping(value = "/destination/{destination}")
     public List<Airport> destination(@PathVariable String destination)

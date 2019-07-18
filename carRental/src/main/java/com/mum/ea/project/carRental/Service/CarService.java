@@ -14,4 +14,7 @@ public interface CarService {
     public void delete(long id);
     public List<Car> findAllByBrandAndAndRentalComp(String brand,long id);
 
+    public List<Car> findAllByRentalComp(long id);
+    public List<Car> findAllByStatusTrue();
+
 }

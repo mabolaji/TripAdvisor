@@ -11,7 +11,7 @@ import java.util.List;
 @Data
 @Entity
 @NoArgsConstructor
-public class RentalCompany {
+public class Rentalcompany {
     @Id
     @GeneratedValue
     private Long id;
@@ -24,7 +24,7 @@ public class RentalCompany {
     @JsonManagedReference
     private List<Car> car;
 
-    public RentalCompany(String comapanyName, String location, List<Car> car) {
+    public Rentalcompany(String comapanyName, String location, List<Car> car) {
         this.comapanyName = comapanyName;
         this.location = location;
         this.car = car;

@@ -15,7 +15,6 @@ public class Booking {
                 ", carId=" + carId +
                 '}';
     }
-
     public String getEmail() {
         return email;
     }
@@ -39,7 +38,6 @@ public class Booking {
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
-
     public Date getStartDate() {
         return startDate;
     }

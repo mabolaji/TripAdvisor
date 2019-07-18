@@ -16,15 +16,13 @@ public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(nullable = false)
     private String carName;
     @Column(name = "carBrand", nullable = false)
     private String brand;
     @Column(nullable = false)
     private boolean status;
-    @Column(length=25,unique = true)
-    private String plateNumber;
-    @Lob
     private String imageurl;
     @Column(nullable = false)
     private int seatingCapacity;
@@ -32,23 +30,15 @@ public class Car {
     private double price;
     @Column(nullable = false)
     private String carTransmissiontype;
+    private String plateNumber;
+    private String description;
     @OneToMany(mappedBy = "car", fetch = FetchType.EAGER)
     @JsonManagedReference
     private List<CarBookingRecord> carbookinglist;
     @ManyToOne
     @JsonBackReference
     @JoinColumn(name = "companyId", nullable = false)
-    private RentalCompany rentalComp;
+    private Rentalcompany rentalComp;
 
-    public Car(String carName, String brand, boolean status, String imageurl, int seatingCapacity, @Positive double price, String carTransmissiontype, List<CarBookingRecord> carbookinglist, RentalCompany rentalComp) {
-        this.carName = carName;
-        this.brand = brand;
-        this.status = status;
-        this.imageurl = imageurl;
-        this.seatingCapacity = seatingCapacity;
-        this.price = price;
-        this.carTransmissiontype = carTransmissiontype;
-        this.carbookinglist = carbookinglist;
-        this.rentalComp = rentalComp;
-    }
+
 }

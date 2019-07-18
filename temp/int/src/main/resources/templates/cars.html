@@ -180,7 +180,7 @@
                             <div class="modal-content">
                                 <div class="modal-body">
                                     <div class="form-group">
-                                        <form action="/book" method="post">
+                                        <form action="/cars" method="post">
 
                                             <div class="col-md align-items-end">
                                                 <div class="form-group">
@@ -193,19 +193,19 @@
                                             <div class="col-md align-items-end">
                                                 <div class="form-group">
                                                     <div class="form-field">
-                                                        <input type="text" class="form-control checkin_date" name="pickdate" placeholder="Check In">
+                                                        <input type="text" class="form-control checkin_date" name="pickDate" placeholder="Check In">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-md align-items-end">
                                                 <div class="form-group">
                                                     <div class="form-field">
-                                                        <input type="text" class="form-control checkout_date" name="dropdate" placeholder="Check Out">
+                                                        <input type="text" class="form-control checkout_date" name="dropDate" placeholder="Check Out">
                                                     </div>
                                                 </div>
                                             </div>
                                             <!--                                <input type="hidden" class="form-control" name="id" placeholder="Enter email address">-->
-                                            <input type="hidden" name="id" th:value="${car.id}">
+                                            <input type="hidden" name="carId" th:value="${car.id}">
                                             <br>
                                             <button type="submit" class="btn btn-primary">
                                                 Book

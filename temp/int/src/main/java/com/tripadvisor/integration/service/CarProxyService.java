@@ -1,8 +1,6 @@
 package com.tripadvisor.integration.service;
 
-import com.tripadvisor.integration.model.CarBookingRecord;
 import com.tripadvisor.integration.model.CarDTO;
-import com.tripadvisor.integration.model.Hotel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;

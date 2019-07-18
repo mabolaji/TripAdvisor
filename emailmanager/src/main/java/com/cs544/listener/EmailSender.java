@@ -20,7 +20,7 @@ public class EmailSender {
 
         try {
 
-            SendGrid sg = new SendGrid("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");
+            SendGrid sg = new SendGrid("");
             SendGrid.Email mail = new SendGrid.Email();
             mail.setFrom("info@tripadvisor.com");
             String[] tos = new String[1];

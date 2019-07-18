@@ -47,4 +47,14 @@ public class CarServiceImp implements CarService {
     public List<Car> findAllByBrandAndAndRentalComp(String brand, long id) {
         return carDao.findAllByBrandAndAndRentalComp(brand,id);
     }
+
+    @Override
+    public List<Car> findAllByRentalComp(long id) {
+        return carDao.findAllByRentalComp(id);
+    }
+
+    @Override
+    public List<Car> findAllByStatusTrue() {
+        return carDao.findAllByStatusTrue();
+    }
 }

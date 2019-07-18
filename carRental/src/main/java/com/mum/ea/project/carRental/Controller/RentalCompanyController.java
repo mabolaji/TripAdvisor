@@ -1,6 +1,6 @@
 package com.mum.ea.project.carRental.Controller;
 
-import com.mum.ea.project.carRental.Model.RentalCompany;
+import com.mum.ea.project.carRental.Model.Rentalcompany;
 import com.mum.ea.project.carRental.Service.RentalCompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,31 +14,25 @@ public class RentalCompanyController {
     private RentalCompanyService compService;
 
     @GetMapping("/company")
-    public List<RentalCompany> getAll() {
+    public List<Rentalcompany> getAll() {
         return compService.getallCompany();
     }
-
-    @GetMapping("/company/{destination}")
-    public List<RentalCompany> getAllRentalCompanyDestination() {
-        return compService.getallCompany();
-    }
-
 
     @GetMapping("/company/search")
-    public List<RentalCompany> getCarByBrand(@RequestParam String location) {
+    public List<Rentalcompany> getCarByBrand(@RequestParam String location) {
         return compService.getCompByLocation(location);
     }
     @GetMapping("/company/{id}")
-    public RentalCompany getcarId(@PathVariable long id) {
+    public Rentalcompany getcarId(@PathVariable long id) {
         return compService.getCompany(id);
     }
     @PostMapping("/company")
-    public void add(@RequestBody RentalCompany rentalCompany) {
+    public void add(@RequestBody Rentalcompany rentalCompany) {
         compService.add(rentalCompany);
     }
 
     @PutMapping("/company/{id}")
-    public void update(@RequestBody RentalCompany rentalCompany) {
+    public void update(@RequestBody Rentalcompany rentalCompany) {
         compService.update(rentalCompany);
     }
 

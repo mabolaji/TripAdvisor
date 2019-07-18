@@ -17,7 +17,7 @@ import java.util.List;
 
 @Controller
 //@RequestMapping("/trip")
-@SessionAttributes("arrival")
+@SessionAttributes({"arrival","cityid"})
 public class TripAdvisorController {
 
     private static final String EXCHANGE = "travel_advisory";
@@ -72,13 +72,15 @@ public class TripAdvisorController {
     }
 
     @PostMapping(value = "/book")
-    public String book(@RequestParam String email,@RequestParam Long id)
+    public String book(@RequestParam String email,@RequestParam Long id,Model model)
     {
+        System.out.println();
+        model.addAttribute("cityid",id);
         BookingDto msg =  new BookingDto();
         msg.setEmail(email);
         msg.setFlightId(id);
         rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY, msg);
-        return "redirect:/cars";
+        return "redirect:/hotels";
     }
     @GetMapping(value = "/destination/{destination}")
     public List<Airport> destination(@PathVariable String destination)

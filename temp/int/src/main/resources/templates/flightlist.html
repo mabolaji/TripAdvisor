@@ -129,8 +129,6 @@
     <tbody>
 
     <tr th:each="flight: ${flightlist}">
-
-<!--<div   >-->
         <div class="card w-50" style="margin: auto">
             <div class="card-body">
                 <span class="card-title" th:text="${flight.departure_city}" ></span> -  <span class="card-title" th:text="${flight.arrival_city}"></span>

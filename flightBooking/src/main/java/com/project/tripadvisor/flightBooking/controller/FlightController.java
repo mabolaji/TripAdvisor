@@ -88,6 +88,26 @@ public class FlightController {
         return airportRepository.findById(Long.parseLong(departure)).get();
     }
 
+//    @GetMapping("/citybyid")
+//    public String citybyid(@RequestParam String id)
+//    {
+//
+//        String t= airportRepository.findById(Long.parseLong(id)).get().getCity();
+//        System.out.println("from flight "+t);
+//        return t;
+//    }
+
+
+    @GetMapping("/citybyid")
+    public Airport citybyid(@RequestParam String id)
+    {
+
+        Airport t= airportRepository.findById(Long.parseLong(id)).get();
+        System.out.println("from flight "+t);
+        return t;
+    }
+
+
     @GetMapping("/flightFilterOptional")
     public List<Flight> flightFilteroptional(@RequestParam String departure, @RequestParam String arrival, @RequestParam String departureDate) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");

@@ -33,4 +33,14 @@ public class HotelProxyService implements HotelService {
 
         return response.getBody();
     }
+
+    @Override
+    public List<Hotel> findbycity(String city) {
+                ResponseEntity<List<Hotel>> response =
+                restTemplate.exchange(hotel_service_url +"/api/hotels?city="+city, HttpMethod.GET, null,
+                        new ParameterizedTypeReference<List<Hotel>>() {
+                        });
+
+return  response.getBody();
+    }
 }

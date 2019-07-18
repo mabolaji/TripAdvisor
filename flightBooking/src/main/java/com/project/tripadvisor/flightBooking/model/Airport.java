@@ -22,16 +22,16 @@ public class Airport {
 
     private String airportCode;
 
-
-    @OneToMany(mappedBy = "departure")
-    @JsonManagedReference
-    private List<Flight> origin=new ArrayList();
-
-    @OneToMany(mappedBy = "arrival")
-    @JsonManagedReference
-    private List<Flight> origin1=new ArrayList();
-
-
+//
+//    @OneToMany(mappedBy = "departure")
+//    @JsonManagedReference
+//    private List<Flight> origin=new ArrayList();
+//
+//    @OneToMany(mappedBy = "arrival")
+//    @JsonManagedReference
+//    private List<Flight> origin1=new ArrayList();
+//
+//
 
 
 }

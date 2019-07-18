@@ -149,239 +149,75 @@
                 </div>
             </div><!-- END-->
 
-<div class="row col-md-9">
-                <div class="col-md-4" th:each="hotel: ${hotels}">
-                <div class="row">
-                    <div class="col-sm col-md-12 ftco-animate">
-                        <div class="destination">
-                            <a href="#" class="img img-2 d-flex justify-content-center align-items-center"
-                               th:style="'background-image: url('+${hotel.image}+')'" >
-                                <div class="icon d-flex justify-content-center align-items-center">
-                                    <span class="icon-link"></span>
-                                </div>
-                            </a>
-                            <div class="text p-3">
-                                <div class="d-flex">
-                                    <div class="one">
-                                        <h3 th:text="${hotel.name}"><a href="#"></a></h3>
-                                        <p class="rate">
-                                            <i class="icon-star"></i>
-                                            <i class="icon-star"></i>
-                                            <i class="icon-star"></i>
-                                            <i class="icon-star"></i>
-                                            <i class="icon-star-o"></i>
-                                            <span>8 Rating</span>
-                                        </p>
+            <div class="row col-md-9">
+                <div class="col-md-4" th:each="hotel: ${hotelsbycity}">
+                    <div class="row">
+                        <div class="col-sm col-md-12 ftco-animate">
+                            <div class="destination">
+                                <a href="#" class="img img-2 d-flex justify-content-center align-items-center"
+                                   th:style="'background-image: url('+${hotel.image}+')'" >
+                                    <div class="icon d-flex justify-content-center align-items-center">
+                                        <span class="icon-link"></span>
                                     </div>
-                                    <div class="two">
-                                        <span class="price per-price"><br><small>$40/night</small></span>
+                                </a>
+                                <div class="text p-3">
+                                    <div class="d-flex">
+                                        <div class="one">
+                                            <h3 th:text="${hotel.name}"><a href="#"></a></h3>
+                                            <p class="rate">
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star-o"></i>
+                                                <span>8 Rating</span>
+                                            </p>
+                                        </div>
+                                        <div class="two">
+                                            <span class="price per-price"><br><small>$40/night</small></span>
+                                        </div>
                                     </div>
-                                </div>
-                                <p th:text="${hotel.description}"></p>
-                                <hr>
-                                <p class="bottom-area d-flex">
-                                    <span><i class="icon-map-o" th:text="${hotel.city}"></i></span>
-<!--                                    <span class="ml-auto"><a href="#">Book Now</a></span>-->
+                                    <p th:text="${hotel.description}"></p>
+                                    <hr>
+                                    <p class="bottom-area d-flex">
+                                        <span><i class="icon-map-o" th:text="${hotel.city}"></i></span>
+                                        <!--                                    <span class="ml-auto"><a href="#">Book Now</a></span>-->
 
 
-                                    <button th:id="'hotel'+${hotel.id}" type="button"
-                                            class="btn btn-primary"
-                                            data-toggle="modal"
-                                    >
-                                        Book Flight
-                                    </button>
-                                </p>
+                                        <button th:id="'hotel'+${hotel.id}" type="button"
+                                                class="btn btn-primary"
+                                                data-toggle="modal"
+                                        >
+                                            Book Flight
+                                        </button>
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                </div>
-</div>
+            </div>
 
-<!--                    <div class="col-sm col-md-6 col-lg-4 ftco-animate">-->
-<!--                        <div class="destination">-->
-<!--                            <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/hotel-2.jpg);">-->
-<!--                                <div class="icon d-flex justify-content-center align-items-center">-->
-<!--                                    <span class="icon-link"></span>-->
-<!--                                </div>-->
-<!--                            </a>-->
-<!--                            <div class="text p-3">-->
-<!--                                <div class="d-flex">-->
-<!--                                    <div class="one">-->
-<!--                                        <h3><a href="#">New Orleans, LA</a></h3>-->
-<!--                                        <p class="rate">-->
-<!--                                            <i class="icon-star"></i>-->
-<!--                                            <i class="icon-star"></i>-->
-<!--                                            <i class="icon-star"></i>-->
-<!--                                            <i class="icon-star"></i>-->
-<!--                                            <i class="icon-star-o"></i>-->
-<!--                                            <span>8 Rating</span>-->
-<!--                                        </p>-->
-<!--                                    </div>-->
-<!--                                    <div class="two">-->
-<!--                                        <span class="price per-price">$40<br><small>/night</small></span>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <p>Far far away, behind the word mountains, far from the countries</p>-->
-<!--                                <hr>-->
-<!--                                <p class="bottom-area d-flex">-->
-<!--                                    <span><i class="icon-map-o"></i> Miami, Fl</span>-->
-<!--                                    <span class="ml-auto"><a href="#">Book Now</a></span>-->
-<!--                                </p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="col-sm col-md-6 col-lg-4 ftco-animate">-->
-<!--                        <div class="destination">-->
-<!--                            <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/hotel-3.jpg);">-->
-<!--                                <div class="icon d-flex justify-content-center align-items-center">-->
-<!--                                    <span class="icon-link"></span>-->
-<!--                                </div>-->
-<!--                            </a>-->
-<!--                            <div class="text p-3">-->
-<!--                                <div class="d-flex">-->
-<!--                                    <div class="one">-->
-<!--                                        <h3><a href="#">New Orleans, LA</a></h3>-->
-<!--                                        <p class="rate">-->
-<!--                                            <i class="icon-star"></i>-->
-<!--                                            <i class="icon-star"></i>-->
-<!--                                            <i class="icon-star"></i>-->
-<!--                                            <i class="icon-star"></i>-->
-<!--                                            <i class="icon-star-o"></i>-->
-<!--                                            <span>8 Rating</span>-->
-<!--                                        </p>-->
-<!--                                    </div>-->
-<!--                                    <div class="two">-->
-<!--                                        <span class="price per-price">$40<br><small>/night</small></span>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <p>Far far away, behind the word mountains, far from the countries</p>-->
-<!--                                <hr>-->
-<!--                                <p class="bottom-area d-flex">-->
-<!--                                    <span><i class="icon-map-o"></i> Miami, Fl</span>-->
-<!--                                    <span class="ml-auto"><a href="#">Book Now</a></span>-->
-<!--                                </p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="col-sm col-md-6 col-lg-4 ftco-animate">-->
-<!--                        <div class="destination">-->
-<!--                            <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/hotel-4.jpg);">-->
-<!--                                <div class="icon d-flex justify-content-center align-items-center">-->
-<!--                                    <span class="icon-link"></span>-->
-<!--                                </div>-->
-<!--                            </a>-->
-<!--                            <div class="text p-3">-->
-<!--                                <div class="d-flex">-->
-<!--                                    <div class="one">-->
-<!--                                        <h3><a href="#">New Orleans, LA</a></h3>-->
-<!--                                        <p class="rate">-->
-<!--                                            <i class="icon-star"></i>-->
-<!--                                            <i class="icon-star"></i>-->
-<!--                                            <i class="icon-star"></i>-->
-<!--                                            <i class="icon-star"></i>-->
-<!--                                            <i class="icon-star-o"></i>-->
-<!--                                            <span>8 Rating</span>-->
-<!--                                        </p>-->
-<!--                                    </div>-->
-<!--                                    <div class="two">-->
-<!--                                        <span class="price per-price">$40<br><small>/night</small></span>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <p>Far far away, behind the word mountains, far from the countries</p>-->
-<!--                                <hr>-->
-<!--                                <p class="bottom-area d-flex">-->
-<!--                                    <span><i class="icon-map-o"></i> Miami, Fl</span>-->
-<!--                                    <span class="ml-auto"><a href="#">Book Now</a></span>-->
-<!--                                </p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="col-sm col-md-6 col-lg-4 ftco-animate">-->
-<!--                        <div class="destination">-->
-<!--                            <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/hotel-5.jpg);">-->
-<!--                                <div class="icon d-flex justify-content-center align-items-center">-->
-<!--                                    <span class="icon-link"></span>-->
-<!--                                </div>-->
-<!--                            </a>-->
-<!--                            <div class="text p-3">-->
-<!--                                <div class="d-flex">-->
-<!--                                    <div class="one">-->
-<!--                                        <h3><a href="#">New Orleans, LA</a></h3>-->
-<!--                                        <p class="rate">-->
-<!--                                            <i class="icon-star"></i>-->
-<!--                                            <i class="icon-star"></i>-->
-<!--                                            <i class="icon-star"></i>-->
-<!--                                            <i class="icon-star"></i>-->
-<!--                                            <i class="icon-star-o"></i>-->
-<!--                                            <span>8 Rating</span>-->
-<!--                                        </p>-->
-<!--                                    </div>-->
-<!--                                    <div class="two">-->
-<!--                                        <span class="price per-price">$40<br><small>/night</small></span>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <p>Far far away, behind the word mountains, far from the countries</p>-->
-<!--                                <hr>-->
-<!--                                <p class="bottom-area d-flex">-->
-<!--                                    <span><i class="icon-map-o"></i> Miami, Fl</span>-->
-<!--                                    <span class="ml-auto"><a href="#">Book Now</a></span>-->
-<!--                                </p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="col-sm col-md-6 col-lg-4 ftco-animate">-->
-<!--                        <div class="destination">-->
-<!--                            <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/hotel-5.jpg);">-->
-<!--                                <div class="icon d-flex justify-content-center align-items-center">-->
-<!--                                    <span class="icon-link"></span>-->
-<!--                                </div>-->
-<!--                            </a>-->
-<!--                            <div class="text p-3">-->
-<!--                                <div class="d-flex">-->
-<!--                                    <div class="one">-->
-<!--                                        <h3><a href="#">New Orleans, LA</a></h3>-->
-<!--                                        <p class="rate">-->
-<!--                                            <i class="icon-star"></i>-->
-<!--                                            <i class="icon-star"></i>-->
-<!--                                            <i class="icon-star"></i>-->
-<!--                                            <i class="icon-star"></i>-->
-<!--                                            <i class="icon-star-o"></i>-->
-<!--                                            <span>8 Rating</span>-->
-<!--                                        </p>-->
-<!--                                    </div>-->
-<!--                                    <div class="two">-->
-<!--                                        <span class="price per-price">$40<br><small>/night</small></span>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <p>Far far away, behind the word mountains, far from the countries</p>-->
-<!--                                <hr>-->
-<!--                                <p class="bottom-area d-flex">-->
-<!--                                    <span><i class="icon-map-o"></i> Miami, Fl</span>-->
-<!--                                    <span class="ml-auto"><a href="#">Book Now</a></span>-->
-<!--                                </p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-                </div>
 
-                <div class="row mt-5">
-                    <div class="col text-center">
-                        <div class="block-27">
-                            <ul>
-                                <li><a href="#">&lt;</a></li>
-                                <li class="active"><span>1</span></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li><a href="#">&gt;</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div> <!-- .col-md-8 -->
         </div>
+
+        <div class="row mt-5">
+            <div class="col text-center">
+                <div class="block-27">
+                    <ul>
+                        <li><a href="#">&lt;</a></li>
+                        <li class="active"><span>1</span></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">&gt;</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> <!-- .col-md-8 -->
+    </div>
     </div>
 </section> <!-- .section -->
 

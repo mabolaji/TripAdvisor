@@ -7,4 +7,6 @@ import java.util.List;
 public interface HotelService {
 
     List<Hotel> findAllHotels();
+
+    List<Hotel> findbycity(String city);
 }

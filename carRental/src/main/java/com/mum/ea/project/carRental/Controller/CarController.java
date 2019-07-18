@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/carRental")
+@RequestMapping("/api/cars")
 public class CarController {
     @Autowired
     private CarService carService;
@@ -60,8 +60,9 @@ public class CarController {
 
 
 
-    @GetMapping("/cars")
+    @GetMapping//("/cars")
     public List<CarDTO> getAll() {
+        System.out.println("123=====================");
 
         List<Car> carList=carService.getallCars();
         List<Car> carL=new ArrayList<>();
@@ -72,13 +73,14 @@ public class CarController {
             }
         }
         carL=carService.getallCars().stream().filter(f->f.isStatus()).collect(Collectors.toList());
-
+        System.out.println("====================="+carL.get(1).getRentalComp().getLocation());
 
                 List<CarDTO> list =  new ArrayList<>();
         carL
                 .stream()
                 .forEach(f -> {
                     CarDTO data =  new CarDTO();
+                    data.setId(f.getId());
                     data.setCarName(f.getCarName());
                     data.setCarBrand(f.getBrand());
                     data.setCarTransmissiontype(f.getCarTransmissiontype());
@@ -88,6 +90,7 @@ public class CarController {
                     data.setPrice(f.getPrice());
                     list.add(data);
                 });
+
 
 
 

@@ -1,20 +1,17 @@
 package com.mum.ea.project.carRental.listener;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.FutureOrPresent;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 public class Booking {
+
     private String email;
     private Long carId;
-    private Date startDate;
-    private Date endDate;
+    private Date pickDate;
+    private  Date dropDate;
 
-    @Override
-    public String toString() {
-        return "Booking{" +
-                "email='" + email + '\'' +
-                ", carId=" + carId +
-                '}';
-    }
     public String getEmail() {
         return email;
     }
@@ -31,18 +28,19 @@ public class Booking {
         this.carId = carId;
     }
 
-    public Date getEndDate() {
-        return endDate;
+    public Date getPickDate() {
+        return pickDate;
     }
 
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
-    }
-    public Date getStartDate() {
-        return startDate;
+    public void setPickDate(Date pickDate) {
+        this.pickDate = pickDate;
     }
 
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
+    public Date getDropDate() {
+        return dropDate;
+    }
+
+    public void setDropDate(Date dropDate) {
+        this.dropDate = dropDate;
     }
 }

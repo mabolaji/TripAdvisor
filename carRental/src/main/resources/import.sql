@@ -10,7 +10,6 @@ INSERT INTO carrental.Rentalcompany VALUES (null,'St 4th North 8974 Bruxelles', 
 
 -- car
 -- (`car_brand`, `car_name`, `car_transmissiontype`, `description`, `imageurl`, `plate_number`, `price`, `seating_capacity`, `status`, `company_id`)
---INSERT INTO carrental.Car  VALUES ('Toyota', 'RAV 2019', 'automatic', 'AC', 'https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BBPZ0SE.img?h=582&w=1119&m=6&q=60&u=t&o=f&l=f', 'Place001', 40, 4, 1, 1);
 
 INSERT INTO carrental.Car VALUES (null,'Rav4 2019', 'Toyota', 'automatic', 'AC', 'https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BBPZ0SE.img?h=582&w=1119&m=6&q=60&u=t&o=f&l=f','Plate001', 30, 4, 1, 1);
 INSERT INTO carrental.Car VALUES (null,'Rav4 2019', 'Toyota', 'automatic', 'AC', 'http://www.autoexplora.com/media/2983360/toyota-rav4-2019-lanzamiento-mexico-gde.jpg','Plate002', 40, 4, 1, 2);
@@ -63,4 +62,4 @@ INSERT INTO carrental.Car VALUES (null,'Sedan', 'Hyundai', 'automatic', 'AC', 'h
 INSERT INTO carrental.Car VALUES (null,'Kona', 'Hyundai', 'automatic', 'AC', 'https://m.hyundaiusa.com/responsive/images/allvehicles/kona/2019-kona-se-surf-blue-disclaimer.png', 60, 4, 1, 4);
 INSERT INTO carrental.Car VALUES (null,'Palisade', 'Hyundai', 'automatic', 'AC', 'https://m.hyundaiusa.com/responsive/images/allvehicles/palisade/2020-palisade-se-sierra-burgundy.png','Plate048', 50, 4, 1, 5);
 INSERT INTO carrental.Car VALUES (null,'Santa', 'Hyundai', 'automatic', 'AC', 'https://m.hyundaiusa.com/responsive/images/allvehicles/santa-fe-xl/2019-santa-fe-limited-ultimate.png','Plate049', 50, 4, 1, 6);
-INSERT INTO carrental.Car VALUES (null,'Santa Fe', 'Hyundai', 'automatic', 'AC', 'https://m.hyundaiusa.com/santa-fe/','Plate050', 40, 4, 1, 7);
+INSERT INTO carrental.Car VALUES (null,'Santa Fe', 'Hyundai', 'automatic', 'AC', 'https://hips.hearstapps.com/amv-prod-cad-assets.s3.amazonaws.com/vdat/submodels/hyundai_ioniq_hyundai-ioniq-hybrid_2019-1546534528851.jpg','Plate050', 40, 4, 1, 7);

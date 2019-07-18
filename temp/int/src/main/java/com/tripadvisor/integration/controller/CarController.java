@@ -44,11 +44,11 @@ public class CarController {
     public String cars(@Valid CarBooking booking, BindingResult bindingResult) {
 
         if(bindingResult.hasErrors()){
-            return "redirect:/cars" + booking.toString();
+            return "/cars";
         }
         else{
             rabbitTemplate.convertAndSend(Common.EXCHANGE, ROUTING_KEY, booking);
-            return "redirect:/home" + booking.toString();
+            return "redirect:/home" ;
         }
 
     }

@@ -11,7 +11,7 @@ import org.springframework.web.servlet.view.RedirectView;
 import java.util.List;
 
 @RestController
-@RequestMapping("/carRental")
+@RequestMapping("/api/book")
 public class CarBookingController {
 
     @Autowired

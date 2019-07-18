@@ -21,6 +21,7 @@ import java.util.List;
 //import org.springframework.web.reactive.function.client.WebClient;
 
 @Controller
+@SessionAttributes("arrival")
 public class HomeController {
 
     @Autowired
@@ -63,6 +64,8 @@ public class HomeController {
         flash.addFlashAttribute("booking", booking);
         List<String> errors = new ArrayList<>();
 
+        //flash.addAttribute("arrival",booking.getDestinationId());
+
         if (result.hasErrors()) {
 
             for (ObjectError error : result.getAllErrors()) {
@@ -73,14 +76,14 @@ public class HomeController {
             flash.addFlashAttribute("errors", errors);
 
             return "redirect:/home";
-
-        } else if (booking.getFrom().compareTo(booking.getTo()) >= 0) {
+        }
+        /*} else if (booking.getFrom().compareTo(booking.getTo()) >= 0) {
 
             errors.add("Departure date must greater than return date");
             flash.addFlashAttribute("errors", errors);
 
             return "redirect:/home";
-        }
+        }*/
 
         return "redirect:/flights";
     }
@@ -91,7 +94,7 @@ public class HomeController {
             List<FlightDto> flights = bookingService.getFlights(booking);
 
             System.out.println(flights);
-
+            model.addAttribute("arrival",booking.getDestinationId());
             model.addAttribute("flights", flights);
 
         } else {
@@ -111,7 +114,7 @@ public class HomeController {
             msg.setFlightId(id);
             rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY, msg);
 
-            return "redirect:/restaurants/" + id;
+            return "redirect:/cars";
         }
 
         return "redirect:/flights";

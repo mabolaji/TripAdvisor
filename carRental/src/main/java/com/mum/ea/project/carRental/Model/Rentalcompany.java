@@ -10,7 +10,7 @@ import java.util.List;
 
 @Data
 @Entity
-@NoArgsConstructor
+//@NoArgsConstructor
 public class Rentalcompany {
     @Id
     @GeneratedValue
@@ -24,6 +24,7 @@ public class Rentalcompany {
     @JsonManagedReference
     private List<Car> car;
 
+    public Rentalcompany(){}
     public Rentalcompany(String comapanyName, String location, List<Car> car) {
         this.comapanyName = comapanyName;
         this.location = location;

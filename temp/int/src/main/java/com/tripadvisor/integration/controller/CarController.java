@@ -29,10 +29,17 @@ public class CarController {
 
     @GetMapping(value = "cars")
     public String cars(Model model, HttpSession httpSession) {
-        String id = (String) httpSession.getAttribute("arrival");
-        model.addAttribute("cars", carProxyService.findCars(id));
-        return "cars";
 
+        try {
+            //System.out.println("httpSession.getAttribute(\"arrival\") : " +httpSession.getAttribute("arrival"));
+            String id =  httpSession.getAttribute("arrival").toString();
+            model.addAttribute("cars", carProxyService.findCars(id));
+            return "cars";
+        }
+        catch (Exception ex){
+            System.out.println(ex.toString());
+            return  "redirect:/home";
+        }
     }
 
     @PostMapping(value = "/cars")

@@ -17,17 +17,20 @@ public class Hotel {
     private Long id;
     private String name;
     private String description;
+    private Integer star;
     private String image;
     private String city;
     @OneToMany(mappedBy = "hotel",fetch = FetchType.EAGER)
     @JsonManagedReference
     private List<Room> roooms = new ArrayList<>();
 
-    public Hotel(String name, String description, String image, String city) {
+    public Hotel(String name, String description, Integer star, String image, String city, List<Room> roooms) {
         this.name = name;
         this.description = description;
+        this.star = star;
         this.image = image;
         this.city = city;
+        this.roooms = roooms;
     }
 
     public boolean addRoom(Room room){

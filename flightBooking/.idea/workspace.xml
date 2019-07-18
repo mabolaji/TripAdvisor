@@ -2,23 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ef189b7-f648-4c55-8499-f3e533742372" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../carRental/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../carRental/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../carRental/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../carRental/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../carRental/carRental.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../carRental/carRental.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../carRental/src/main/java/com/mum/ea/project/carRental/Controller/RentalCompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../carRental/src/main/java/com/mum/ea/project/carRental/Controller/RentalCompanyController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../carRental/src/main/java/com/mum/ea/project/carRental/Dao/IRentalCompany.java" beforeDir="false" afterPath="$PROJECT_DIR$/../carRental/src/main/java/com/mum/ea/project/carRental/Dao/IRentalCompany.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../carRental/src/main/java/com/mum/ea/project/carRental/Model/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/../carRental/src/main/java/com/mum/ea/project/carRental/Model/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../carRental/src/main/java/com/mum/ea/project/carRental/Model/RentalCompany.java" beforeDir="false" afterPath="$PROJECT_DIR$/../carRental/src/main/java/com/mum/ea/project/carRental/Model/RentalCompany.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../carRental/src/main/java/com/mum/ea/project/carRental/Model/Rentalcompany.java" beforeDir="false" afterPath="$PROJECT_DIR$/../carRental/src/main/java/com/mum/ea/project/carRental/Model/Rentalcompany.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../carRental/src/main/java/com/mum/ea/project/carRental/Service/RentalCompanyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../carRental/src/main/java/com/mum/ea/project/carRental/Service/RentalCompanyService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../carRental/src/main/java/com/mum/ea/project/carRental/Service/ServiceImp/RentalCompanyServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../carRental/src/main/java/com/mum/ea/project/carRental/Service/ServiceImp/RentalCompanyServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../carRental/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../carRental/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../carRental/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../carRental/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/controller/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/controller/CarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/controller/HomeBackUp.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/controller/HomeController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
@@ -325,6 +317,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20604026" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />

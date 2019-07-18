@@ -36,6 +36,7 @@ public class CarController {
             return "cars";
         }
         catch (Exception ex){
+            System.out.println(ex.toString());
             return  "redirect:/home";
         }
     }

@@ -38,7 +38,7 @@ public class Car {
     @ManyToOne
     @JsonBackReference
     @JoinColumn(name = "companyId", nullable = false)
-    private Rentalcompany rentalComp;
+    private RentalCompany rentalComp;
 
 
 }

@@ -1,7 +1,7 @@
 package com.mum.ea.project.carRental.Service.ServiceImp;
 
 import com.mum.ea.project.carRental.Dao.IRentalCompany;
-import com.mum.ea.project.carRental.Model.Rentalcompany;
+import com.mum.ea.project.carRental.Model.RentalCompany;
 import com.mum.ea.project.carRental.Service.RentalCompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,28 +15,28 @@ public class RentalCompanyServiceImp implements RentalCompanyService {
     private IRentalCompany rentalDao;
 
     @Override
-    public void add(Rentalcompany rentalCompany) {
+    public void add(RentalCompany rentalCompany) {
         rentalDao.save(rentalCompany);
     }
 
     @Override
-    public Rentalcompany getCompany(long compId) {
+    public RentalCompany getCompany(long compId) {
         return rentalDao.findById(compId).get();
     }
 
     @Override
-    public List<Rentalcompany> getCompByLocation(String location) {
+    public List<RentalCompany> getCompByLocation(String location) {
         return rentalDao.findAllByLocation(location);
     }
 
 
     @Override
-    public List<Rentalcompany> getallCompany() {
+    public List<RentalCompany> getallCompany() {
         return rentalDao.findAll();
     }
 
     @Override
-    public void update(Rentalcompany rentalCompany) {
+    public void update(RentalCompany rentalCompany) {
         rentalDao.save(rentalCompany);
     }
 

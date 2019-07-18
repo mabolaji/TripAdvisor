@@ -29,10 +29,15 @@ public class CarController {
 
     @GetMapping(value = "cars")
     public String cars(Model model, HttpSession httpSession) {
-        String id = (String) httpSession.getAttribute("arrival");
-        model.addAttribute("cars", carProxyService.findCars(id));
-        return "cars";
 
+        try {
+            String id = (String) httpSession.getAttribute("arrival");
+            model.addAttribute("cars", carProxyService.findCars(id));
+            return "cars";
+        }
+        catch (Exception ex){
+            return  "redirect:/home";
+        }
     }
 
     @PostMapping(value = "/cars")

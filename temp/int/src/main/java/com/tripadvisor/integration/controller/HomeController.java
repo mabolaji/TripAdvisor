@@ -111,7 +111,7 @@ public class HomeController {
             msg.setFlightId(id);
             rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY, msg);
 
-            return "redirect:/restaurants/" + id;
+            return "redirect:/cars";
         }
 
         return "redirect:/flights";

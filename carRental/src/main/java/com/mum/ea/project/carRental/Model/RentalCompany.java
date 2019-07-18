@@ -10,8 +10,8 @@ import java.util.List;
 
 @Data
 @Entity
-@NoArgsConstructor
-public class Rentalcompany {
+//@NoArgsConstructor
+public class RentalCompany {
     @Id
     @GeneratedValue
     private Long id;
@@ -24,7 +24,8 @@ public class Rentalcompany {
     @JsonManagedReference
     private List<Car> car;
 
-    public Rentalcompany(String comapanyName, String location, List<Car> car) {
+    public RentalCompany(){}
+    public RentalCompany(String comapanyName, String location, List<Car> car) {
         this.comapanyName = comapanyName;
         this.location = location;
         this.car = car;

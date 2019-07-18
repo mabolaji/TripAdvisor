@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf102474-4bba-4281-a52a-d48ba6dea99c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../emailmanager/src/main/java/com/cs544/listener/EmailSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/../emailmanager/src/main/java/com/cs544/listener/EmailSender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../eureka-server/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flightBooking/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flightBooking/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flightBooking/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flightBooking/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flightBooking/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../flightBooking/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flightBooking/src/main/resources/import.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../flightBooking/src/main/resources/import.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flightBooking/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../flightBooking/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flightBooking/target/classes/import.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../flightBooking/target/classes/import.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hotel-res/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../hotel-res/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hotel-res/src/main/resources/import.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../hotel-res/src/main/resources/import.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/controller/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/controller/CarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/controller/HotelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/controller/HotelController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -217,8 +202,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="x" value="-8" />
+    <option name="width" value="784" />
+    <option name="height" value="832" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -383,10 +369,10 @@
     <option name="totallyTimeSpent" value="67503000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <frame x="-8" y="-8" width="1296" height="1010" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19731544" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23786408" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -397,7 +383,7 @@
       <window_info id="Learn" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3226257" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.26339796" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />

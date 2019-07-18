@@ -4,6 +4,7 @@ package com.project.tripadvisor.hotelres.listener;
 import com.project.tripadvisor.hotelres.domain.Hotel;
 import com.project.tripadvisor.hotelres.domain.Reservation;
 import com.project.tripadvisor.hotelres.domain.Room;
+import com.project.tripadvisor.hotelres.repository.ReservationRepo;
 import com.project.tripadvisor.hotelres.service.HotelService;
 import com.project.tripadvisor.hotelres.service.ReservationService;
 import com.project.tripadvisor.hotelres.service.RoomService;
@@ -33,28 +34,37 @@ public class BookingListener {
     private HotelService hotelService;
     @Autowired
     private RoomService roomService;
-
+@Autowired
+ReservationRepo reservationRepo;;
     @RabbitHandler
     public void receiveMessage(HotelBooking booking) {
 
         LOGGER.info(" receive  booking : " + booking.toString());
-        try {
+        /*try {*/
 
-            Room room = roomService.findRoom(booking.getRoomId());
-
-            Reservation bookingRecord = new Reservation();
-            bookingRecord.setRoom(room);
-            bookingRecord.setCheckIn(booking.getInDate());
-            bookingRecord.setCheckOut(booking.getOutDate());
-            bookingRecord.setEmail(booking.getEmail());
-
-            bookingService.reserve(bookingRecord);
-            //send email to customer
-            rabbitTemplate.convertAndSend(EXCHANGE, "email_queue", getEmail(booking.getEmail()));
-            //todo : send email to Airline
-        } catch (Exception ex) {
-            LOGGER.error(ex.toString());
+        Room room = roomService.findRoom(booking.getRoomId());
+        if (room == null) {
+            System.out.println("room is null");
+        } else {
+            System.out.println("room is real " + room.getId());
+            //System.out.println(room.toString());
         }
+
+
+        Reservation bookingRecord = new Reservation();
+        bookingRecord.setRoom(room);
+        bookingRecord.setCheckIn(booking.getInDate());
+        bookingRecord.setCheckOut(booking.getOutDate());
+        bookingRecord.setEmail(booking.getEmail());
+
+        reservationRepo.save(bookingRecord);
+        //bookingService.reserve(bookingRecord);
+        //send email to customer
+        rabbitTemplate.convertAndSend(EXCHANGE, "email_queue", getEmail(booking.getEmail()));
+        //todo : send email to Airline
+        /*} catch (Exception ex) {
+            LOGGER.error(ex.toString());
+        }*/
 
     }
 

@@ -24,4 +24,16 @@ public class Room {
     @JsonBackReference
     private Hotel hotel;
 
+    @Override
+    public String toString() {
+        return "Room{" +
+                "id=" + id +
+                ", roomNo=" + roomNo +
+                ", beds=" + beds +
+                ", price=" + price +
+                ", status=" + status +
+                ", image='" + image + '\'' +
+                ", type='" + type + '\'' +
+                '}';
+    }
 }

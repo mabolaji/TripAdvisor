@@ -6,9 +6,11 @@ import com.project.tripadvisor.hotelres.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
+@Transactional
 public class RoomServiceImpl implements RoomService {
     @Autowired
     RoomRepo roomRepo;
@@ -25,7 +27,7 @@ public class RoomServiceImpl implements RoomService {
 
     @Override
     public void changeRoomStatus(Room room) {
-        room.setStatus(0);
+       room.setStatus(0);
         roomRepo.save(room);
     }
 

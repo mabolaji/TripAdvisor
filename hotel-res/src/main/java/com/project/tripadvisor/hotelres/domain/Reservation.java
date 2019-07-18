@@ -17,7 +17,7 @@ public class Reservation {
     private String email;
     private Date checkIn;
     private Date checkOut;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne//(cascade = CascadeType.ALL)
     private Room room;
 
     public Reservation(String email, Date checkIn, Date checkOut, Room room) {

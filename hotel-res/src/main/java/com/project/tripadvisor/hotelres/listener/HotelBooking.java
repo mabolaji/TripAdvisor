@@ -54,4 +54,15 @@ public class HotelBooking {
     public void setRoomId(Long roomId) {
         this.roomId = roomId;
     }
+
+    @Override
+    public String toString() {
+        return "HotelBooking{" +
+                "email='" + email + '\'' +
+                ", hotelId=" + hotelId +
+                ", inDate=" + inDate +
+                ", outDate=" + outDate +
+                ", roomId=" + roomId +
+                '}';
+    }
 }

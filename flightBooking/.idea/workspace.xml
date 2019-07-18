@@ -2,29 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ef189b7-f648-4c55-8499-f3e533742372" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../carRental/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../carRental/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../carRental/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../carRental/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../carRental/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../carRental/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../carRental/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../carRental/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/RabbitMqConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/RabbitMqConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/controller/RoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/controller/RoomController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/domain/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/domain/Reservation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/domain/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/domain/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/listener/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/listener/HotelBooking.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/listener/BookingListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/listener/BookingListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hotel-res/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../hotel-res/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hotel-res/src/main/resources/import.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../hotel-res/src/main/resources/import.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/listener/HotelBooking.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/listener/HotelBooking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/repository/HotelRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/repository/HotelRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/repository/ReservationRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/repository/ReservationRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/repository/RoomRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/repository/RoomRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/service/Impl/HotelServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/service/Impl/HotelServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/service/Impl/ReservationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/service/Impl/ReservationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/service/Impl/RoomServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hotel-res/src/main/java/com/project/tripadvisor/hotelres/service/Impl/RoomServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hotel-service" beforeDir="false" afterPath="$PROJECT_DIR$/../hotel-service" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/controller/HotelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/controller/HotelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/model/HotelBooking.java" beforeDir="false" afterPath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/model/HotelBooking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/model/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/model/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/service/HotelProxyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/service/HotelProxyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/service/HotelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../temp/int/src/main/java/com/tripadvisor/integration/service/HotelService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../temp/int/src/main/resources/templates/hotelbycity.html" beforeDir="false" afterPath="$PROJECT_DIR$/../temp/int/src/main/resources/templates/hotelbycity.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -382,7 +370,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27967808" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />

@@ -17,7 +17,7 @@ public class Booking {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Future(message = "Departure date must be a date in the future")
     private Date from;
-    @NotNull(message = "Kindly select valid return date")
+   // @NotNull(message = "Kindly select valid return date")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Future(message = "Departure date must be a date in the future")
     private Date to;

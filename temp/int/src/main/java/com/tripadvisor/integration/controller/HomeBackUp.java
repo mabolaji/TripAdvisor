@@ -1,67 +1,55 @@
-package com.tripadvisor.integration.controller;
+/*package com.tripadvisor.integration.controller;
 
-
-import com.tripadvisor.integration.model.*;
 import com.tripadvisor.integration.service.IBookingService;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.ParameterizedTypeReference;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+
+import com.tripadvisor.integration.model.Booking;
+import com.tripadvisor.integration.model.Flight;
+import com.tripadvisor.integration.model.Restaurant;
+import com.tripadvisor.integration.service.IBookingService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.RestTemplate;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-//import org.springframework.web.reactive.function.client.WebClient;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
-@Controller
-//@RequestMapping("/home")
-public class HomeController {
+public class HomeBackUp {
 
     @Autowired
     private IBookingService bookingService;
 
-    @GetMapping(value = "/")
-    public String index() {
-        return "redirect:/home";
+    @GetMapping("/home")
+    public String index(){
+        return  "index";
     }
-    @GetMapping(value = "/home")
-    public String home(@ModelAttribute("booking") Booking booking, Model model) {
+
+    @GetMapping
+    public ModelAndView index(@ModelAttribute("booking") Booking booking, Model model) {
 
         if (!model.containsAttribute("booking")) {
             model.addAttribute("booking", booking);
         }
-        if (!model.containsAttribute("errors")) {
-            model.addAttribute("errors",  null);
-        }
         model.addAttribute("origins", bookingService.getOrigins());
         model.addAttribute("destinations", bookingService.getDestinations(booking.getOriginId()));
-        return "home";
 
-         /*
         ModelAndView mdv=new ModelAndView();
         //ResponseEntity<List<Airport>> airlines = restTemplate.exchange(flight_service_url+"/api/origins", HttpMethod.GET, null, new ParameterizedTypeReference<List<Airport>>(){});
-        mdv.setViewName("home");
+        mdv.setViewName("index");
         //mdv.addObject("airlines",airlines.getBody());
         return mdv;
-        //
-
-        ModelAndView mdv = new ModelAndView();
-        //ResponseEntity<List<Airport>> airlines = restTemplate.exchange(flight_service_url+"/api/origins", HttpMethod.GET, null, new ParameterizedTypeReference<List<Airport>>(){});
-        mdv.setViewName("home");
-        mdv.addObject("airlines", bookingService.getOrigins());
-        return mdv;*/
+       // return "home";
     }
 
-    @PostMapping(value = "/home")
+    @PostMapping
     public String reload(Booking booking, RedirectAttributes flash) {
         flash.addFlashAttribute("booking", booking);
         return "redirect:/home";
@@ -96,11 +84,15 @@ public class HomeController {
     }
 
     @GetMapping("/flights")
-    public String flights(@Valid @ModelAttribute("booking") Booking booking, BindingResult result, Model model)
+    public String flights(
+            @Valid @ModelAttribute("booking") Booking booking, BindingResult result, Model model)
+    //@ModelAttribute("booking") Booking booking, Model model)
     {
         if (model.containsAttribute("booking") && result.hasErrors() == false) {
-            List<FlightDto> flights = bookingService.getFlights(booking);
+            // System.out.println("booking : " + booking);
+            List<Flight> flights = bookingService.getFlights(booking);
 
+            // System.out.println(flights);
             model.addAttribute("flights", flights);
 
         } else {
@@ -109,4 +101,28 @@ public class HomeController {
 
         return "flights";
     }
+
+    @PostMapping("/book/{id}")
+    public String book(@PathVariable Long id, RedirectAttributes flash) {
+
+        if (id != null) {
+            return "redirect:/restaurants/" + id;
+        }
+
+        return "redirect:/flights";
+    }
+
+    @GetMapping("/restaurants/{flightId}")
+    public String restaurants(@PathVariable Long flightId, Model model) {
+        if (flightId == null) {
+            return "redirect:/home";
+        }
+
+        List<Restaurant> restaurants = bookingService.getRestaurants(flightId);
+        model.addAttribute("restaurants", restaurants);
+
+        return "restaurants";
+    }
+
 }
+*/

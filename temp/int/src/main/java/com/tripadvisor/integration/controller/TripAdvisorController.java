@@ -27,7 +27,7 @@ public class TripAdvisorController {
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
-    private String flight_service_url = "http://flight1-service/";
+    private String flight_service_url = "http://flight-service/";
     private String hotel_service_url = "http://hotel-service/";
     private String car_service_url = "http://car-service/carRental/company";
 
@@ -47,10 +47,10 @@ public class TripAdvisorController {
         return mdv;
     }
 
-    @GetMapping("/home")
+   /* @GetMapping("/home")
     public String home(){
         return "flights";
-    }
+    }*/
 
     @GetMapping(value ="/getcarCompany")
     public List<RentalCompany> getAllCarCompanies(){
@@ -65,7 +65,7 @@ public class TripAdvisorController {
     {
         List<FlightDto> flights = (restTemplate.exchange(flight_service_url + "api/flightFilter?departure="+departure+"&arrival="+arrival+"&departureDate="+departureDate, HttpMethod.GET, null, new ParameterizedTypeReference<List<FlightDto>>(){})).getBody();
         model.addAttribute("flightlist",flights);
-        return "flights";
+        return "flightlist";
     }
 
     @PostMapping(value = "/book")

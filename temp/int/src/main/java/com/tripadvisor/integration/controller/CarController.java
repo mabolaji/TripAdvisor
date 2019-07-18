@@ -54,9 +54,10 @@ public class CarController {
             for (ObjectError error : bindingResult.getAllErrors()) {
                 System.out.println(error.getDefaultMessage());
                 errors.add(error.getDefaultMessage());
-
-                flash.addFlashAttribute("errors", errors);
+                // errors.add(error.getDefaultMessage());
             }
+
+            errors.add("All fields are required and make sure you enter valid values");
             return "/cars";
         }
         else{

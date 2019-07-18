@@ -1,7 +1,9 @@
 
 package com.tripadvisor.integration.controller;
 
-import com.tripadvisor.integration.model.*;
+import com.tripadvisor.integration.model.Airport;
+import com.tripadvisor.integration.model.Hotel;
+import com.tripadvisor.integration.model.HotelBooking;
 import com.tripadvisor.integration.service.FlightService;
 import com.tripadvisor.integration.service.HotelService;
 import com.tripadvisor.integration.util.Common;
@@ -31,22 +33,28 @@ public class HotelController {
     HotelService hotelService;
     @Autowired
     FlightService flightService;
+
     @GetMapping("/hotels")
-    public String  hotels(Model model, HttpSession httpSession,String hotel){
-        Airport city=flightService.city(httpSession.getAttribute("arrival").toString());
-        List<Hotel> hotelList=hotelService.findbycity(city.getCity());
-        //List<Room> rooms=hotelService.rooms();
+    public String hotels(Model model, HttpSession httpSession, String hotel) {
+        try {
+            Airport city = flightService.city(httpSession.getAttribute("arrival").toString());
+            List<Hotel> hotelList = hotelService.findbycity(city.getCity());
+            //List<Room> rooms=hotelService.rooms();
 //        System.out.println("from hotel roommmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm "+hotelList.size());
-        System.out.println(hotelList);
-        for (Hotel h: hotelList){
-            System.out.println(h.getRoooms());
+            System.out.println(hotelList);
+            for (Hotel h : hotelList) {
+                System.out.println(h.getRoooms());
+            }
+            model.addAttribute("hotelsbycity", hotelList);
+            return "hotelbycity";
+        } catch (Exception ex) {
+            System.out.println(ex.toString());
+            return "redirect:/home";
         }
-        model.addAttribute("hotelsbycity", hotelList);
-        return "hotelbycity";
     }
 
     @GetMapping("/room")
-    public String  flight(){
+    public String flight() {
         return "test";
     }
 
@@ -54,8 +62,8 @@ public class HotelController {
     public String cars(@Valid HotelBooking booking, BindingResult bindingResult, RedirectAttributes flash) {
 
 
-        if(bindingResult.hasErrors()){
-            List<String> errors =  new ArrayList<>();
+        if (bindingResult.hasErrors()) {
+            List<String> errors = new ArrayList<>();
             for (ObjectError error : bindingResult.getAllErrors()) {
                 System.out.println(error.getDefaultMessage());
                 errors.add(error.getDefaultMessage());
@@ -63,11 +71,10 @@ public class HotelController {
                 flash.addFlashAttribute("errors", errors);
             }
             return "redirect:/hotels";
-        }
-        else{
+        } else {
             System.out.println(booking);
             rabbitTemplate.convertAndSend(Common.EXCHANGE, ROUTING_KEY, booking);
-            return "redirect:/cars" ;
+            return "redirect:/cars";
         }
 
     }

@@ -68,9 +68,10 @@ public class HomeController {
 
             for (ObjectError error : result.getAllErrors()) {
                 System.out.println(error.getDefaultMessage());
-                errors.add(error.getDefaultMessage());
+               // errors.add(error.getDefaultMessage());
             }
 
+            errors.add("All fields are required and make sure you enter valid values");
             flash.addFlashAttribute("errors", errors);
 
             return "redirect:/home";

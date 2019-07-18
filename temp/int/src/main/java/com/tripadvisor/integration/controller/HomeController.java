@@ -112,10 +112,11 @@ public class HomeController {
             msg.setFlightId(id);
             rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY, msg);
 
-            //return "redirect:/cars";
-            return "redirect:/hotels";
+            return "redirect:/cars";
+            //return "redirect:/hotels";
         }
 
-        return "redirect:/flights";
+        return "redirect:/cars";
     }
+
 }

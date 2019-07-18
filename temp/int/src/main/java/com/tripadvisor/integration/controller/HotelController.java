@@ -65,7 +65,7 @@ public class HotelController {
         }
         else{
             rabbitTemplate.convertAndSend(Common.EXCHANGE, ROUTING_KEY, booking);
-            return "redirect:/home" ;
+            return "redirect:/cars" ;
         }
 
     }
